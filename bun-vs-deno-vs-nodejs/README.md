@@ -50,7 +50,20 @@ sudo apt-get install -y curl unzip xz-utils util-linux python3 iproute2
 ## Author's results
 
 <!-- RESULTS:START -->
-Pending: filled from the author's run on 2026-07-04 (see [results/](results/)).
+Run on 2026-07-04, raw output in [results/2026-07-04-author.md](results/2026-07-04-author.md):
+
+| Benchmark | Bun 1.3.14 | Deno 2.9.1 | Node.js 24.18.0 |
+|---|---|---|---|
+| HTTP throughput (req/s, single core) | 122,170 | **133,093** | 47,734 |
+| Cold start (median of 15) | **11 ms** | 14 ms | 21 ms |
+| Install, cold cache (585 packages) | **5.8 s** | 6.0 s | 11.8 s (npm) |
+| Install, warm cache | 0.17 s | **0.12 s** | 2.0 s (npm) |
+| 200 tests / 20 files | **0.02 s** | 1.04 s | 0.14 s (`node --test`), 0.81 s (Jest) |
+| `JSON.parse`, 3.3 MB | **11.9 ms** | 12.1 ms | 14.3 ms |
+| `JSON.stringify`, 3.3 MB | **5.5 ms** | 6.5 ms | 13.6 ms |
+| Idle memory (RSS) | **36 MB** | 51 MB | 49 MB |
+
+The saturation check passed (+1.9% with two parallel clients), so these are server-bound numbers. Deno 2.7.4 measured 102,950 req/s on the same machine the same day; 2.9.1 gained ~30% and took the throughput lead from Bun.
 <!-- RESULTS:END -->
 
 Machine: 12-core / 24-thread x86_64 Linux desktop, kernel 6.17, `powersave` CPU governor. The absolute numbers are hardware-dependent; the ratios between runtimes are what the post discusses.

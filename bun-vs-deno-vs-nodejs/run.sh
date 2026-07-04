@@ -4,6 +4,7 @@
 # Installs pinned runtimes into ./.tools (no sudo, no system changes) and runs
 # six guided stages. See README.md for methodology and flags.
 set -euo pipefail
+export LC_ALL=C.UTF-8
 cd "$(dirname "$0")"
 
 NODE_VERSION="24.18.0"
