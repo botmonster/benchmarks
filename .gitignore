@@ -1,0 +1,7 @@
+.tools/
+node_modules/
+package-lock.json
+bun.lock
+bun.lockb
+deno.lock
+results/tmp/
