@@ -21,6 +21,12 @@ The results, the analysis, and the story of how the first measurement attempt we
 - The server is pinned to core 0 with `taskset`; the client gets every core except core 0 and its SMT sibling, so they never compete for the same physical core.
 - `node --test` is invoked with explicit file globs. A bare directory argument silently runs zero tests and reports success in a fraction of a second, which looks like a spectacular benchmark win until you read the test counts.
 - Deno's install links packages from a global cache instead of materializing the full `node_modules` tree, so its install numbers do less disk work than npm's or bun's.
+- A syscall check with strace disproved the common claim that Bun uses `io_uring` while Node uses `epoll`. On these versions it is the other way around: all three runtimes poll sockets with epoll (Bun via `epoll_pwait2`), and only Node (libuv 1.51) sets up io_uring rings for file I/O, on by default. Reproduce with:
+
+  ```bash
+  strace -f -e trace=io_uring_setup,io_uring_enter,epoll_wait,epoll_pwait2 \
+    .tools/node-*/bin/node server-node.js   # same idea for bun / deno
+  ```
 
 ## Replicate it
 
