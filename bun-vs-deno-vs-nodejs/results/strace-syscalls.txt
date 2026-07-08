@@ -1,0 +1,42 @@
+Syscall check: io_uring vs epoll
+=================================
+
+Purpose: verify which I/O interface each runtime actually uses, to test the
+common claim that "Bun uses io_uring while Node is stuck on epoll".
+
+Machine: x86_64 Linux desktop, kernel 6.17.0-35-generic.
+Versions: node v24.18.0, bun 1.3.14, deno 2.9.1 (the pinned .tools/ builds).
+
+Method: trace each server while it handles two real HTTP requests (curl -> 200),
+counting the relevant syscalls across all threads.
+
+  strace -f -e trace=io_uring_setup,io_uring_enter,epoll_wait,epoll_pwait2 \
+    <runtime> <server-file>
+
+Counts
+------
+runtime   io_uring_setup  io_uring_enter  epoll_wait  epoll_pwait2
+node        3               4               0           0
+bun         0               0               0           22
+deno        0               0               8           0
+
+Conclusion
+----------
+The folklore is backwards on these versions:
+
+- Bun  : zero io_uring. Polls sockets with epoll_pwait2 (newest epoll variant).
+- Deno : zero io_uring. Event loop is epoll (epoll_wait).
+- Node : the only one using io_uring. libuv 1.51 sets up io_uring rings for
+         file I/O, on by default in Node 24.
+
+Representative lines
+--------------------
+node (io_uring rings set up and entered):
+  io_uring_setup(256, {flags=IORING_SETUP_NO_SQARRAY, ...}) = 4
+  io_uring_enter(11, 2, 2, IORING_ENTER_GETEVENTS, NULL, 0) = 2
+
+bun (epoll_pwait2 on the listen/accept fd):
+  epoll_pwait2(4, [{events=EPOLLIN, ...}], 1024, {tv_sec=0, tv_nsec=99873478}, [], 8) = 1
+
+deno (classic epoll_wait):
+  epoll_wait(3, [{events=EPOLLIN, data={u32=0, u64=0}}], 1024, 8162) = 1
