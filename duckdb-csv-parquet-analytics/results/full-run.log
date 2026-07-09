@@ -1,0 +1,74 @@
+
+=== Preflight ===
+CPUs: 24  RAM: 63GB
+
+=== Tool bootstrap (everything goes into ./.tools, nothing touches your system) ===
+
+duckdb-cli v1.5.4 (Variegata) 08e34c447b
+py-duckdb  1.5.4
+pandas     2.2.3
+polars     1.17.1
+pyarrow    18.1.0
+
+=== Dataset (NYC TLC yellow taxi + taxi zone lookup) ===
+Downloading months: 2024-[01 02 03 04 05 06 07 08 09 10 11 12] (skip any already present)
+  fetch 2024-04 ...
+  fetch 2024-05 ...
+  fetch 2024-06 ...
+  fetch 2024-07 ...
+  fetch 2024-08 ...
+  fetch 2024-09 ...
+  fetch 2024-10 ...
+  fetch 2024-11 ...
+  fetch 2024-12 ...
+Dataset on disk: 661M
+
+=== Stage 1/4: Direct query on Parquet, no import step (CLI) ===
+Pointing the DuckDB CLI straight at the Parquet glob, zero CREATE TABLE:
+┌──────────┬──────────┬───────────┐
+│  trips   │ avg_fare │ avg_miles │
+│  int64   │  double  │  double   │
+├──────────┼──────────┼───────────┤
+│ 41169720 │    19.27 │      4.98 │
+└──────────┴──────────┴───────────┘
+wall: 0.06s
+
+=== Stage 2/4: DuckDB vs Pandas vs Polars (filter / group-by / join) ===
+Files: 12 parquet, reps=5
+Rows loaded: 41,169,720
+
+  filter |  pandas:    127.2 ms
+  filter |  duckdb:     22.5 ms
+  filter |  polars:    156.9 ms
+
+ groupby |  pandas:    893.0 ms
+ groupby |  duckdb:     20.1 ms
+ groupby |  polars:    272.2 ms
+
+    join |  pandas:   6795.5 ms
+    join |  duckdb:     20.3 ms
+    join |  polars:   1316.2 ms
+
+ operation |     pandas |     duckdb |     polars
+----------------------------------------------------
+    filter |      127ms |       23ms |      157ms
+   groupby |      893ms |       20ms |      272ms
+      join |     6795ms |       20ms |     1316ms
+
+wrote results/compare.json
+
+=== Stage 3/4: CSV vs Parquet scan on identical data (pushdown) ===
+Materializing a CSV copy of yellow_tripdata_2024-01.parquet ...
+48M	/home/botmonster/dev/benchmarks/duckdb-csv-parquet-analytics/data/yellow_tripdata_2024-01.parquet
+286M	/home/botmonster/dev/benchmarks/duckdb-csv-parquet-analytics/data/yellow_tripdata_2024-01.csv
+parquet scan:     10.7 ms
+csv scan:        149.5 ms
+parquet is 14.0x faster on this selective query
+
+=== Stage 4/4: Out-of-core aggregation under a 2GB memory_limit ===
+rows: 41,169,720  memory_limit: 2GB
+aggregation completed in 0.09s under a 2GB limit (20 groups returned)
+top group: (237, 1, 1522099, 13.171282623535037)
+
+=== Done ===
+Raw comparison JSON: results/compare.json

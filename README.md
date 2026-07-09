@@ -13,6 +13,7 @@ Every time a post publishes measured numbers, the exact scripts that produced th
 | Folder | Blog post | What is benchmarked |
 |---|---|---|
 | [bun-vs-deno-vs-nodejs](bun-vs-deno-vs-nodejs/) | [Bun vs Deno vs Node.js: which JavaScript runtime actually wins in 2026?](https://botmonster.com/web-dev/bun-vs-deno-vs-nodejs-javascript-runtime-2026/) | HTTP throughput (single core), process cold start, cold/warm package install, test runners, JSON parse/stringify, idle memory |
+| [duckdb-csv-parquet-analytics](duckdb-csv-parquet-analytics/) | [DuckDB is absurdly good at crunching gigabytes with no database server](https://botmonster.com/coding/duckdb-developers-analyze-csv-parquet-no-server/) | DuckDB vs Pandas vs Polars (filter/group-by/join), CSV vs Parquet scan, out-of-core sort under a memory limit, direct Parquet query with no import |
 
 ## Replicating
 

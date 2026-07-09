@@ -1,0 +1,25 @@
+{
+  "rows": 41169720,
+  "files": 12,
+  "reps": 5,
+  "duckdb_version": "1.5.4",
+  "pandas_version": "2.2.3",
+  "polars_version": "1.17.1",
+  "results_ms": {
+    "filter": {
+      "pandas": 127.2,
+      "duckdb": 22.5,
+      "polars": 156.9
+    },
+    "groupby": {
+      "pandas": 893.0,
+      "duckdb": 20.1,
+      "polars": 272.2
+    },
+    "join": {
+      "pandas": 6795.5,
+      "duckdb": 20.3,
+      "polars": 1316.2
+    }
+  }
+}
