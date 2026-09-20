@@ -2,33 +2,33 @@
 <rect width="760" height="322" fill="#ffffff"/>
 <text x="16" y="26" font-size="15" font-weight="600" fill="#1a1a1a">Total time to convert all 10 pages (ms, lower is better)</text>
 <text x="200" y="60" font-size="12" text-anchor="end" fill="#333">html-to-markdown (py)</text>
-<rect x="210" y="49" width="8.4" height="16" rx="3" fill="#2f6f9f"/>
-<text x="226.4" y="62" font-size="12" fill="#444">82</text>
+<rect x="210" y="49" width="7.8" height="16" rx="3" fill="#2f6f9f"/>
+<text x="225.8" y="62" font-size="12" fill="#444">82</text>
 <text x="200" y="86" font-size="12" text-anchor="end" fill="#333">htmd</text>
-<rect x="210" y="75" width="11.1" height="16" rx="3" fill="#c2632b"/>
-<text x="229.1" y="88" font-size="12" fill="#444">108</text>
+<rect x="210" y="75" width="10.4" height="16" rx="3" fill="#c2632b"/>
+<text x="228.4" y="88" font-size="12" fill="#444">108</text>
 <text x="200" y="112" font-size="12" text-anchor="end" fill="#333">html-to-markdown (go)</text>
-<rect x="210" y="101" width="19.3" height="16" rx="3" fill="#3f8a58"/>
-<text x="237.3" y="114" font-size="12" fill="#444">189</text>
+<rect x="210" y="101" width="18.1" height="16" rx="3" fill="#3f8a58"/>
+<text x="236.1" y="114" font-size="12" fill="#444">189</text>
 <text x="200" y="138" font-size="12" text-anchor="end" fill="#333">turndown</text>
-<rect x="210" y="127" width="57.5" height="16" rx="3" fill="#8a4f9e"/>
-<text x="275.5" y="140" font-size="12" fill="#444">562</text>
+<rect x="210" y="127" width="53.7" height="16" rx="3" fill="#8a4f9e"/>
+<text x="271.7" y="140" font-size="12" fill="#444">562</text>
 <text x="200" y="164" font-size="12" text-anchor="end" fill="#333">html2text</text>
-<rect x="210" y="153" width="64.7" height="16" rx="3" fill="#b03a48"/>
-<text x="282.7" y="166" font-size="12" fill="#444">632</text>
+<rect x="210" y="153" width="60.5" height="16" rx="3" fill="#b03a48"/>
+<text x="278.5" y="166" font-size="12" fill="#444">632</text>
 <text x="200" y="190" font-size="12" text-anchor="end" fill="#333">trafilatura</text>
-<rect x="210" y="179" width="103.1" height="16" rx="3" fill="#7a6a3a"/>
-<text x="321.1" y="192" font-size="12" fill="#444">1008</text>
+<rect x="210" y="179" width="96.4" height="16" rx="3" fill="#7a6a3a"/>
+<text x="314.4" y="192" font-size="12" fill="#444">1008</text>
 <text x="200" y="216" font-size="12" text-anchor="end" fill="#333">markdownify</text>
-<rect x="210" y="205" width="170.0" height="16" rx="3" fill="#4a7fb5"/>
-<text x="388.0" y="218" font-size="12" fill="#444">1662</text>
+<rect x="210" y="205" width="158.9" height="16" rx="3" fill="#4a7fb5"/>
+<text x="376.9" y="218" font-size="12" fill="#444">1662</text>
 <text x="200" y="242" font-size="12" text-anchor="end" fill="#333">markitdown</text>
-<rect x="210" y="231" width="208.5" height="16" rx="3" fill="#d08a3e"/>
-<text x="426.5" y="244" font-size="12" fill="#444">2039</text>
+<rect x="210" y="231" width="194.9" height="16" rx="3" fill="#d08a3e"/>
+<text x="412.9" y="244" font-size="12" fill="#444">2039</text>
 <text x="200" y="268" font-size="12" text-anchor="end" fill="#333">node-html-markdown</text>
-<rect x="210" y="257" width="312.4" height="16" rx="3" fill="#5aa06f"/>
-<text x="530.4" y="270" font-size="12" fill="#444">3054</text>
+<rect x="210" y="257" width="292.0" height="16" rx="3" fill="#5aa06f"/>
+<text x="510.0" y="270" font-size="12" fill="#444">3054</text>
 <text x="200" y="294" font-size="12" text-anchor="end" fill="#333">pandoc</text>
-<rect x="210" y="283" width="460.0" height="16" rx="3" fill="#9a6bb0"/>
-<text x="678.0" y="296" font-size="12" fill="#444">4497</text>
+<rect x="210" y="283" width="430.0" height="16" rx="3" fill="#9a6bb0"/>
+<text x="648.0" y="296" font-size="12" fill="#444">4497</text>
 </svg>

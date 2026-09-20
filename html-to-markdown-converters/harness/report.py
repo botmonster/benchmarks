@@ -96,7 +96,7 @@ def rank(agg):
     return ranked
 
 
-def bar_chart(path, title, labels, values, fmt="{:.0f}%", scale=100):
+def bar_chart(path, title, labels, values, fmt="{:.0f}%", scale=100, value_text=None):
     row_h, pad_l, pad_t, width = 26, 210, 46, 760
     height = pad_t + row_h * len(labels) + 16
     top = max(values) * scale if values else 1
@@ -106,13 +106,14 @@ def bar_chart(path, title, labels, values, fmt="{:.0f}%", scale=100):
         f'<rect width="{width}" height="{height}" fill="#ffffff"/>',
         f'<text x="16" y="26" font-size="15" font-weight="600" fill="#1a1a1a">{title}</text>',
     ]
-    span = width - pad_l - 90
-    for i, (label, value) in enumerate(zip(labels, values)):
+    span = width - pad_l - 120
+    texts = value_text or [fmt.format(v * scale) for v in values]
+    for i, (label, value, text) in enumerate(zip(labels, values, texts)):
         y = pad_t + i * row_h
         w = max(1, (value * scale / top) * span)
         parts.append(f'<text x="{pad_l - 10}" y="{y + 14}" font-size="12" text-anchor="end" fill="#333">{label}</text>')
         parts.append(f'<rect x="{pad_l}" y="{y + 3}" width="{w:.1f}" height="16" rx="3" fill="{PALETTE[i % len(PALETTE)]}"/>')
-        parts.append(f'<text x="{pad_l + w + 8:.1f}" y="{y + 16}" font-size="12" fill="#444">{fmt.format(value * scale)}</text>')
+        parts.append(f'<text x="{pad_l + w + 8:.1f}" y="{y + 16}" font-size="12" fill="#444">{text}</text>')
     parts.append("</svg>")
     with open(path, "w") as fh:
         fh.write("\n".join(parts) + "\n")
@@ -133,6 +134,11 @@ def main():
     os.makedirs(charts, exist_ok=True)
     bar_chart(os.path.join(charts, "pass-rate.svg"), "Probe pass rate across 10 pages",
               [n for n, _ in ranked], [a["pass_rate"] for _, a in ranked])
+    total_probes = max((a["total"] for _, a in ranked), default=0)
+    bar_chart(os.path.join(charts, "probes-passed.svg"),
+              f"Probes passed out of {total_probes}",
+              [n for n, _ in ranked], [a["passed"] for _, a in ranked], fmt="{:.0f}", scale=1,
+              value_text=[f"{a['passed']} / {100 * a['pass_rate']:.0f}%" for _, a in ranked])
     bar_chart(os.path.join(charts, "retention.svg"), "Article text retention",
               [n for n, _ in ranked], [a["retention"] for _, a in ranked])
     by_speed = sorted(ranked, key=lambda kv: kv[1]["total_ms"])
