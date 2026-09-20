@@ -1,0 +1,44 @@
+### alice: GET /v1/devices with Authorization: Bearer token-alice
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Fri, 11 Sep 2026 09:19:06 GMT
+Content-Type: application/json
+Content-Length: 131
+Connection: keep-alive
+X-Cache-Status: MISS
+
+{"account": "alice", "doors": [{"id": "alice-door1", "name": "alice garage 1", "status": "closed"}], "origin_time": 1789118346.158}
+
+### bob: GET /v1/devices with Authorization: Bearer token-bob
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Fri, 11 Sep 2026 09:19:06 GMT
+Content-Type: application/json
+Content-Length: 131
+Connection: keep-alive
+X-Cache-Status: HIT
+
+{"account": "alice", "doors": [{"id": "alice-door1", "name": "alice garage 1", "status": "closed"}], "origin_time": 1789118346.158}
+
+### carol: GET /v1/devices with Authorization: Bearer token-carol
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Fri, 11 Sep 2026 09:19:06 GMT
+Content-Type: application/json
+Content-Length: 131
+Connection: keep-alive
+X-Cache-Status: HIT
+
+{"account": "alice", "doors": [{"id": "alice-door1", "name": "alice garage 1", "status": "closed"}], "origin_time": 1789118346.158}
+
+### alice: GET /v1/devices with Authorization: Bearer token-alice
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Fri, 11 Sep 2026 09:19:06 GMT
+Content-Type: application/json
+Content-Length: 131
+Connection: keep-alive
+X-Cache-Status: HIT
+
+{"account": "alice", "doors": [{"id": "alice-door1", "name": "alice garage 1", "status": "closed"}], "origin_time": 1789118346.158}
+

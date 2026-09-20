@@ -1,0 +1,9 @@
+clients: 40  poll interval: 1.0s  duration: 90.0s
+polls: 3274  own doors: 91  someone else's doors: 3183 (97%)
+distinct accounts handed to other clients: 14
+cache refills seen: 16  accounts served more than once: 2
+seconds each cached account was served before the next one took over: median 6.0s, min 5.7s, max 6.1s
+stretch lengths: 5.7s 6.0s 6.0s 6.0s 6.0s 6.0s 6.0s 6.0s 6.1s 6.0s 6.0s 6.0s 6.0s 6.0s 5.9s
+household01 saw: household33 x5, household12 x6, household06 x5, household16 x5, household24 x6, household26 x5, household14 x6, household25 x5, household10 x5, household17 x6, household21 x5, household24 x6, household28 x5, household24 x6, household22 x5, household39 x1
+household02 saw: household33 x6, household12 x5, household06 x5, household16 x6, household24 x5, household26 x6, household14 x5, household25 x6, household10 x5, household17 x6, household21 x5, household24 x6, household28 x5, household24 x6, household22 x5
+household03 saw: household33 x5, household12 x6, household06 x5, household16 x6, household24 x5, household26 x6, household14 x5, household25 x6, household10 x5, household17 x6, household21 x5, household24 x6, household28 x5, household24 x6, household22 x5

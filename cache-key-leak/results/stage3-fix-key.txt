@@ -1,0 +1,8 @@
+alice  asks -> own doors                (X-Cache-Status: MISS)
+bob    asks -> own doors                (X-Cache-Status: MISS)
+carol  asks -> own doors                (X-Cache-Status: MISS)
+alice  asks -> own doors                (X-Cache-Status: HIT)
+origin log:
+  11:20:39 origin answered for alice
+  11:20:39 origin answered for bob
+  11:20:39 origin answered for carol
