@@ -1,0 +1,10 @@
+01-wikipedia-markdown	https://en.wikipedia.org/wiki/Markdown	CC BY-SA 4.0	https://creativecommons.org/licenses/by-sa/4.0/	Wikipedia contributors, "Markdown", Wikipedia, The Free Encyclopedia
+02-wikibooks-latex-mathematics	https://en.wikibooks.org/wiki/LaTeX/Mathematics	CC BY-SA 4.0	https://creativecommons.org/licenses/by-sa/4.0/	Wikibooks contributors, "LaTeX/Mathematics", Wikibooks
+03-mdn-html-table	https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table	CC BY-SA 2.5	https://creativecommons.org/licenses/by-sa/2.5/	MDN contributors, "<table>: The Table element", MDN Web Docs
+04-python-docs-asyncio-task	https://docs.python.org/3/library/asyncio-task.html	PSF License 2.0	https://docs.python.org/3/license.html	Python Software Foundation, "Coroutines and Tasks", Python documentation
+05-rust-book-vectors	https://doc.rust-lang.org/book/ch08-01-vectors.html	MIT OR Apache-2.0	https://github.com/rust-lang/book/blob/main/LICENSE-MIT	Steve Klabnik and Carol Nichols, "Storing Lists of Values with Vectors", The Rust Programming Language
+06-kubernetes-pod-lifecycle	https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/	CC BY 4.0	https://creativecommons.org/licenses/by/4.0/	The Kubernetes Authors, "Pod Lifecycle", Kubernetes Documentation
+07-gutenberg-alice	https://www.gutenberg.org/files/11/11-h/11-h.htm	Public domain (US)	https://www.gutenberg.org/policy/permission.html	Lewis Carroll, "Alice's Adventures in Wonderland", Project Gutenberg
+08-arxiv-phi3	https://arxiv.org/html/2404.14219	CC BY 4.0	https://creativecommons.org/licenses/by/4.0/	Marah Abdin et al., "Phi-3 Technical Report", arXiv:2404.14219
+09-wikivoyage-tokyo	https://en.wikivoyage.org/wiki/Tokyo	CC BY-SA 4.0	https://creativecommons.org/licenses/by-sa/4.0/	Wikivoyage contributors, "Tokyo", Wikivoyage
+10-github-readme-markitdown	https://github.com/microsoft/markitdown	MIT	https://github.com/microsoft/markitdown/blob/main/LICENSE	Microsoft, "markitdown" README, GitHub

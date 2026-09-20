@@ -1,0 +1,12 @@
+turndown	JavaScript	converter	7.2.4
+turndown (no gfm plugin)	JavaScript	converter	7.2.4
+node-html-markdown	JavaScript	converter	2.0.0
+markdownify	Python	converter	1.2.3
+html2text	Python	converter	2025.4.15
+html-to-markdown (py)	Python	converter	3.14.3
+trafilatura	Python	extractor	2.2.0
+markitdown	Python	extractor	0.1.7
+pandoc	Haskell	converter	3.11
+pandoc (default gfm)	Haskell	converter	3.11
+html-to-markdown (go)	Go	converter	2.5.2
+htmd	Rust	converter	0.5.1

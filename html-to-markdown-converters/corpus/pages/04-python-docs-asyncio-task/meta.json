@@ -1,0 +1,9 @@
+{
+  "slug": "04-python-docs-asyncio-task",
+  "source_url": "https://docs.python.org/3/library/asyncio-task.html",
+  "license": "PSF License 2.0",
+  "license_url": "https://docs.python.org/3/license.html",
+  "attribution": "Python Software Foundation, \"Coroutines and Tasks\", Python documentation",
+  "fetched_at": "2026-09-20T13:17:12Z",
+  "bytes": 177639
+}

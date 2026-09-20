@@ -1,0 +1,125 @@
+page: 05-rust-book-vectors
+source: https://doc.rust-lang.org/book/ch08-01-vectors.html
+probes:
+  - id: h2-chapter
+    feature: headings
+    type: heading
+    args: {level: 2, text: Storing Lists of Values with Vectors}
+  - id: h3-creating
+    feature: headings
+    type: heading
+    args: {level: 3, text: Creating a New Vector}
+  - id: h3-updating
+    feature: headings
+    type: heading
+    args: {level: 3, text: Updating a Vector}
+  - id: h3-iterating
+    feature: headings
+    type: heading
+    args: {level: 3, text: Iterating Over the Values in a Vector}
+  - id: h3-dropping
+    feature: headings
+    type: heading
+    args: {level: 3, text: Dropping a Vector Drops Its Elements}
+
+  - id: code-block-new-vector
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "let v: Vec<i32> = Vec::new();"}
+    note: a standalone pre with nothing around it, the easiest possible code block
+  - id: code-block-push
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "v.push(5); v.push(6); v.push(7); v.push(8);"}
+  - id: code-block-indexing
+    feature: code
+    type: code_block
+    args: {body: "let third: &i32 = &v[2];"}
+  - id: code-fence-language-rust
+    feature: code
+    type: fence
+    weight: 2
+    args: {body: "let v = vec![1, 2, 3];", lang: rust}
+    note: mdBook tags the code as language-rust, so the fence should carry the language
+  - id: code-generic-angle-brackets
+    feature: code
+    type: code_block
+    args: {body: "let third: Option<&i32> = v.get(2);"}
+    note: angle brackets inside code must not be read as HTML
+  - id: code-macro-brackets
+    feature: code
+    type: code_block
+    args: {body: "let mut v = vec![1, 2, 3, 4, 5];"}
+    note: vec![...] contains Markdown link syntax and must not be mangled
+  - id: code-enum-example
+    feature: code
+    type: code_block
+    args: {body: "enum SpreadsheetCell {"}
+  - id: code-format-braces
+    feature: code
+    type: code_block
+    args: {body: "println!(\"The first element is: {first}\");"}
+
+  - id: escape-vec-macro-not-link
+    feature: escaping
+    type: not_regex
+    args: {pattern: "vec!\\[1, 2, 3\\]\\("}
+    note: vec![1, 2, 3] must never be turned into a Markdown link
+
+  - id: inline-code-vec-t
+    feature: inline
+    type: regex
+    args: {pattern: "`Vec<T>`"}
+    note: inline code in prose, generics included
+  - id: inline-code-get-method
+    feature: inline
+    type: regex
+    args: {pattern: "`get`"}
+
+  - id: note-admonition-text
+    feature: structure
+    type: contains
+    args: {text: "For more on the implementation details of the"}
+  - id: order-creating-before-dropping
+    feature: structure
+    type: order
+    args: {first: "Creating a New Vector", second: "Dropping a Vector Drops Its Elements"}
+  - id: no-raw-pre-html
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "<pre>"}
+  - id: no-script-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "window.playground_copyable"}
+
+  - id: link-chapter-cross-ref
+    feature: links
+    type: link
+    args: {text: "“Data Types”", href: "ch03-02-data-types.html#data-types"}
+    note: a relative cross-chapter link carrying a fragment, plus curly quotes in the text
+  - id: link-relative-parent-path
+    feature: links
+    type: link
+    args: {text: "the API documentation", href: "../std/vec/struct.Vec.html"}
+    note: a relative path that climbs out of the current directory
+  - id: link-listing-anchor
+    feature: links
+    type: regex
+    args: {pattern: "\\]\\([^)]*#[a-z0-9-]+\\)"}
+    note: at least one in-page anchor link survives
+
+  - id: prose-panicking-sentence
+    feature: structure
+    type: contains
+    args: {text: "You would use this method if accessing an element"}
+
+  - id: boilerplate-keyboard-shortcuts
+    feature: boilerplate
+    type: contains
+    args: {text: "Keyboard shortcuts"}
+    invert_for: extractor

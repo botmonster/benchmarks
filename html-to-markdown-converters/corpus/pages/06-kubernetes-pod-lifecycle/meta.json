@@ -1,0 +1,9 @@
+{
+  "slug": "06-kubernetes-pod-lifecycle",
+  "source_url": "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "The Kubernetes Authors, \"Pod Lifecycle\", Kubernetes Documentation",
+  "fetched_at": "2026-09-20T13:17:12Z",
+  "bytes": 608899
+}

@@ -1,0 +1,141 @@
+page: 08-arxiv-phi3
+source: https://arxiv.org/html/2404.14219
+probes:
+  - id: h1-paper-title
+    feature: headings
+    type: heading
+    args: {level: 1, text: "Phi-3 Technical Report"}
+  - id: h2-introduction
+    feature: headings
+    type: heading
+    args: {level: 2, text: "1 Introduction"}
+  - id: h2-safety
+    feature: headings
+    type: heading
+    args: {level: 2, text: "5 Safety"}
+  - id: h3-vision-benchmarks
+    feature: headings
+    type: heading
+    args: {level: 3, text: "7.2 Academic benchmarks"}
+
+  - id: math-no-doubled-digits
+    feature: math
+    type: absent
+    weight: 3
+    args: {text: "30723072"}
+    note: LaTeXML prints the number twice in the DOM, once as MathML and once as a fallback
+  - id: math-no-doubled-context
+    feature: math
+    type: absent
+    weight: 2
+    args: {text: "128K128K"}
+  - id: math-value-present
+    feature: math
+    type: contains
+    args: {text: "3072"}
+  - id: math-no-mathml-tags
+    feature: math
+    type: absent
+    weight: 2
+    args: {text: "<annotation"}
+
+  - id: figure-caption-one
+    feature: images
+    type: prose
+    weight: 2
+    args: {text: "Figure 1: Toy illustration of the blocksparse attention in phi-3-small"}
+  - id: figure-caption-three
+    feature: images
+    type: prose
+    args: {text: "Scaling law close to the"}
+  - id: figure-image-blocksparse
+    feature: images
+    type: image
+    weight: 2
+    args: {src: "figures/illustration-of-bs-attn.png"}
+  - id: figure-image-iphone
+    feature: images
+    type: image
+    args: {src: "iphone_song3.PNG"}
+
+  - id: table-author-list
+    feature: tables
+    type: contains
+    args: {text: "Marah Abdin"}
+    note: the author block is the only real HTML table on the page
+  - id: span-table-content-medium
+    feature: tables
+    type: prose
+    weight: 2
+    args: {text: "Phi-3-medium"}
+    note: benchmark tables here are nested spans, not table elements, so only the text can survive
+  - id: span-table-benchmark-value
+    feature: tables
+    type: contains
+    args: {text: "MMLU"}
+
+  - id: citation-anchor-survives
+    feature: footnotes
+    type: contains
+    weight: 2
+    args: {text: "bib.bibx56"}
+  - id: citation-key-visible
+    feature: footnotes
+    type: prose
+    args: {text: "RWC+19"}
+  - id: bibliography-entry
+    feature: footnotes
+    type: prose
+    weight: 2
+    args: {text: "Introducing meta llama 3"}
+
+  - id: prose-abstract-opening
+    feature: structure
+    type: prose
+    weight: 2
+    args: {text: "We introduce phi-3-mini, a 3.8 billion parameter language model trained on 3.3 trillion tokens"}
+  - id: order-intro-before-safety
+    feature: structure
+    type: order
+    args: {first: "1 Introduction", second: "5 Safety"}
+  - id: no-raw-span-html
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "ltx_tabular"}
+  - id: no-script-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "MathJax"}
+
+  - id: inline-italic-ie
+    feature: inline
+    type: regex
+    args: {pattern: "(\\*|_)i\\.e\\.(\\*|_)"}
+    note: LaTeXML italicises i.e. and e.g., the only emphasis in the body
+  - id: link-external-openai-cdn
+    feature: links
+    type: regex
+    args: {pattern: "\\]\\([^)]*cdn\\.openai\\.com[^)]*\\)"}
+    note: the paper's single external link
+  - id: link-figure-reference
+    feature: links
+    type: link
+    args: {href: "#S2.F1"}
+
+  - id: list-safety-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+]|\\d+[.)])\\s+"}
+
+  - id: boilerplate-arxiv-header
+    feature: boilerplate
+    type: contains
+    args: {text: "Why HTML?"}
+    invert_for: extractor
+  - id: boilerplate-arxiv-footer
+    feature: boilerplate
+    type: contains
+    args: {text: "We gratefully acknowledge support from"}
+    invert_for: extractor

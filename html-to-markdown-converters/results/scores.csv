@@ -1,0 +1,121 @@
+page,tool,lang,kind,ranked,probes_passed,probes_total,probe_pass_rate,retention,boilerplate_leakage,output_bytes
+01-wikipedia-markdown,turndown,JavaScript,converter,True,31,36,0.8333,0.9725,0.7368,87480
+01-wikipedia-markdown,turndown (no gfm plugin),JavaScript,converter,False,32,36,0.8571,0.9728,0.7368,85448
+01-wikipedia-markdown,node-html-markdown,JavaScript,converter,True,32,36,0.9048,0.9608,0.6947,104197
+01-wikipedia-markdown,markdownify,Python,converter,True,34,36,0.9524,0.9608,0.6947,64083
+01-wikipedia-markdown,html2text,Python,converter,True,32,36,0.881,0.9608,0.6842,64101
+01-wikipedia-markdown,html-to-markdown (py),Python,converter,True,34,36,0.9524,0.9596,0.4105,69109
+01-wikipedia-markdown,trafilatura,Python,extractor,True,31,36,0.881,0.8721,0.0,42734
+01-wikipedia-markdown,markitdown,Python,extractor,True,34,36,0.9524,0.9583,0.0,53402
+01-wikipedia-markdown,pandoc,Haskell,converter,True,17,36,0.4762,0.8194,0.1474,44548
+01-wikipedia-markdown,pandoc (default gfm),Haskell,converter,False,21,36,0.5238,0.9833,0.1579,206682
+01-wikipedia-markdown,html-to-markdown (go),Go,converter,True,33,36,0.9048,0.9627,0.6842,72509
+01-wikipedia-markdown,htmd,Rust,converter,True,33,36,0.9048,0.9672,0.7368,111420
+02-wikibooks-latex-mathematics,turndown,JavaScript,converter,True,18,27,0.6857,0.9718,0.697,231911
+02-wikibooks-latex-mathematics,turndown (no gfm plugin),JavaScript,converter,False,23,27,0.8286,0.963,0.697,84117
+02-wikibooks-latex-mathematics,node-html-markdown,JavaScript,converter,True,22,27,0.8286,0.9598,0.6667,120214
+02-wikibooks-latex-mathematics,markdownify,Python,converter,True,26,27,0.9429,0.9599,0.6667,75854
+02-wikibooks-latex-mathematics,html2text,Python,converter,True,26,27,0.9429,0.9593,0.6667,81473
+02-wikibooks-latex-mathematics,html-to-markdown (py),Python,converter,True,25,27,0.9143,0.9838,0.4394,228934
+02-wikibooks-latex-mathematics,trafilatura,Python,extractor,True,22,27,0.7714,0.8982,0.0,58089
+02-wikibooks-latex-mathematics,markitdown,Python,extractor,True,24,27,0.8857,0.9599,0.6667,78601
+02-wikibooks-latex-mathematics,pandoc,Haskell,converter,True,16,27,0.6,0.8106,0.1515,58937
+02-wikibooks-latex-mathematics,pandoc (default gfm),Haskell,converter,False,13,27,0.4571,0.9702,0.1515,247605
+02-wikibooks-latex-mathematics,html-to-markdown (go),Go,converter,True,27,27,1.0,0.9608,0.6667,99477
+02-wikibooks-latex-mathematics,htmd,Rust,converter,True,23,27,0.8286,0.9624,0.697,119225
+03-mdn-html-table,turndown,JavaScript,converter,True,26,28,0.9143,0.5403,0.3102,75102
+03-mdn-html-table,turndown (no gfm plugin),JavaScript,converter,False,26,28,0.9143,0.5395,0.3102,74520
+03-mdn-html-table,node-html-markdown,JavaScript,converter,True,25,28,0.9143,0.54,0.3387,76996
+03-mdn-html-table,markdownify,Python,converter,True,27,28,0.9714,0.5409,0.3387,73920
+03-mdn-html-table,html2text,Python,converter,True,26,28,0.9143,0.5401,0.3387,91913
+03-mdn-html-table,html-to-markdown (py),Python,converter,True,26,28,0.9429,0.5338,0.0677,57852
+03-mdn-html-table,trafilatura,Python,extractor,True,27,28,0.9714,0.4436,0.0,40761
+03-mdn-html-table,markitdown,Python,extractor,True,25,28,0.9143,0.5407,0.3387,73919
+03-mdn-html-table,pandoc,Haskell,converter,True,22,28,0.8,0.5285,0.0,51136
+03-mdn-html-table,pandoc (default gfm),Haskell,converter,False,21,28,0.7143,0.853,0.0178,79995
+03-mdn-html-table,html-to-markdown (go),Go,converter,True,26,28,0.9143,0.5403,0.3458,92896
+03-mdn-html-table,htmd,Rust,converter,True,25,28,0.8857,0.5384,0.3102,78311
+04-python-docs-asyncio-task,turndown,JavaScript,converter,True,26,28,0.8824,0.9668,1.0,63644
+04-python-docs-asyncio-task,turndown (no gfm plugin),JavaScript,converter,False,26,28,0.8824,0.9668,1.0,63576
+04-python-docs-asyncio-task,node-html-markdown,JavaScript,converter,True,23,28,0.7941,0.965,1.0,62232
+04-python-docs-asyncio-task,markdownify,Python,converter,True,28,28,1.0,0.9668,1.0,65702
+04-python-docs-asyncio-task,html2text,Python,converter,True,23,28,0.7941,0.9668,1.0,61509
+04-python-docs-asyncio-task,html-to-markdown (py),Python,converter,True,27,28,0.9412,0.9668,0.9412,61226
+04-python-docs-asyncio-task,trafilatura,Python,extractor,True,20,28,0.6765,0.9591,0.0,55872
+04-python-docs-asyncio-task,markitdown,Python,extractor,True,26,28,0.9412,0.9668,1.0,65623
+04-python-docs-asyncio-task,pandoc,Haskell,converter,True,20,28,0.6765,0.9614,0.0147,60030
+04-python-docs-asyncio-task,pandoc (default gfm),Haskell,converter,False,13,28,0.4412,0.9647,0.0,152307
+04-python-docs-asyncio-task,html-to-markdown (go),Go,converter,True,28,28,1.0,0.9668,1.0,76109
+04-python-docs-asyncio-task,htmd,Rust,converter,True,27,28,0.9412,0.9668,1.0,63934
+05-rust-book-vectors,turndown,JavaScript,converter,True,25,25,1.0,0.9943,1.0,14950
+05-rust-book-vectors,turndown (no gfm plugin),JavaScript,converter,False,25,25,1.0,0.9943,1.0,14950
+05-rust-book-vectors,node-html-markdown,JavaScript,converter,True,25,25,1.0,0.9943,1.0,13093
+05-rust-book-vectors,markdownify,Python,converter,True,24,25,0.9333,0.9943,1.0,12841
+05-rust-book-vectors,html2text,Python,converter,True,23,25,0.9,0.9943,1.0,13300
+05-rust-book-vectors,html-to-markdown (py),Python,converter,True,25,25,1.0,0.9943,1.0,17127
+05-rust-book-vectors,trafilatura,Python,extractor,True,23,25,0.9,0.9943,0.0,13019
+05-rust-book-vectors,markitdown,Python,extractor,True,23,25,0.9,0.9943,1.0,12772
+05-rust-book-vectors,pandoc,Haskell,converter,True,23,25,0.9,0.9943,0.0,12523
+05-rust-book-vectors,pandoc (default gfm),Haskell,converter,False,19,25,0.7333,0.9948,0.0,15593
+05-rust-book-vectors,html-to-markdown (go),Go,converter,True,24,25,0.9667,0.9943,1.0,14223
+05-rust-book-vectors,htmd,Rust,converter,True,25,25,1.0,0.9943,1.0,14998
+06-kubernetes-pod-lifecycle,turndown,JavaScript,converter,True,28,28,1.0,0.9875,0.9668,162568
+06-kubernetes-pod-lifecycle,turndown (no gfm plugin),JavaScript,converter,False,25,28,0.8571,0.9875,0.9668,159012
+06-kubernetes-pod-lifecycle,node-html-markdown,JavaScript,converter,True,27,28,0.9714,0.9859,0.9668,148342
+06-kubernetes-pod-lifecycle,markdownify,Python,converter,True,27,28,0.9429,0.9874,0.9668,145628
+06-kubernetes-pod-lifecycle,html2text,Python,converter,True,23,28,0.7714,0.9885,0.9668,168162
+06-kubernetes-pod-lifecycle,html-to-markdown (py),Python,converter,True,26,28,0.9429,0.9874,0.0196,66090
+06-kubernetes-pod-lifecycle,trafilatura,Python,extractor,True,18,28,0.6571,0.8643,0.0,50691
+06-kubernetes-pod-lifecycle,markitdown,Python,extractor,True,25,28,0.8857,0.9874,0.9668,156468
+06-kubernetes-pod-lifecycle,pandoc,Haskell,converter,True,25,28,0.8857,0.987,0.0034,62096
+06-kubernetes-pod-lifecycle,pandoc (default gfm),Haskell,converter,False,21,28,0.7429,0.987,0.0034,72552
+06-kubernetes-pod-lifecycle,html-to-markdown (go),Go,converter,True,28,28,1.0,0.9874,0.9668,177308
+06-kubernetes-pod-lifecycle,htmd,Rust,converter,True,28,28,1.0,0.983,0.9668,159595
+07-gutenberg-alice,turndown,JavaScript,converter,True,17,21,0.7333,0.9999,,154268
+07-gutenberg-alice,turndown (no gfm plugin),JavaScript,converter,False,18,21,0.7667,0.9999,,153781
+07-gutenberg-alice,node-html-markdown,JavaScript,converter,True,18,21,0.7667,0.9999,,152616
+07-gutenberg-alice,markdownify,Python,converter,True,19,21,0.8333,0.9999,,152677
+07-gutenberg-alice,html2text,Python,converter,True,17,21,0.7333,0.9999,,152524
+07-gutenberg-alice,html-to-markdown (py),Python,converter,True,19,21,0.8333,0.9999,,151527
+07-gutenberg-alice,trafilatura,Python,extractor,True,13,21,0.6,0.9959,,151432
+07-gutenberg-alice,markitdown,Python,extractor,True,19,21,0.8333,0.9999,,152309
+07-gutenberg-alice,pandoc,Haskell,converter,True,17,21,0.8,0.9999,,153618
+07-gutenberg-alice,pandoc (default gfm),Haskell,converter,False,16,21,0.7667,0.9999,,154589
+07-gutenberg-alice,html-to-markdown (go),Go,converter,True,19,21,0.8333,0.9999,,154067
+07-gutenberg-alice,htmd,Rust,converter,True,19,21,0.8333,0.9999,,154907
+08-arxiv-phi3,turndown,JavaScript,converter,True,25,28,0.825,0.9995,1.0,103369
+08-arxiv-phi3,turndown (no gfm plugin),JavaScript,converter,False,26,28,0.875,0.9995,1.0,72245
+08-arxiv-phi3,node-html-markdown,JavaScript,converter,True,25,28,0.85,0.9994,0.9744,70441
+08-arxiv-phi3,markdownify,Python,converter,True,25,28,0.85,0.9994,1.0,70881
+08-arxiv-phi3,html2text,Python,converter,True,23,28,0.775,0.9995,1.0,63682
+08-arxiv-phi3,html-to-markdown (py),Python,converter,True,23,28,0.775,0.9811,0.8462,92805
+08-arxiv-phi3,trafilatura,Python,extractor,True,25,28,0.9,0.9241,0.0,59146
+08-arxiv-phi3,markitdown,Python,extractor,True,23,28,0.8,0.9994,1.0,69399
+08-arxiv-phi3,pandoc,Haskell,converter,True,27,28,0.975,0.981,1.0,99980
+08-arxiv-phi3,pandoc (default gfm),Haskell,converter,False,16,28,0.6,0.9807,1.0,338973
+08-arxiv-phi3,html-to-markdown (go),Go,converter,True,26,28,0.875,0.9995,1.0,76631
+08-arxiv-phi3,htmd,Rust,converter,True,26,28,0.875,0.9995,1.0,73921
+09-wikivoyage-tokyo,turndown,JavaScript,converter,True,24,26,0.8857,0.9991,0.6753,290545
+09-wikivoyage-tokyo,turndown (no gfm plugin),JavaScript,converter,False,25,26,0.9143,0.9991,0.6753,247295
+09-wikivoyage-tokyo,node-html-markdown,JavaScript,converter,True,24,26,0.9429,0.9988,0.6753,291822
+09-wikivoyage-tokyo,markdownify,Python,converter,True,26,26,1.0,0.9986,0.6753,167535
+09-wikivoyage-tokyo,html2text,Python,converter,True,24,26,0.9429,0.9988,0.6753,196233
+09-wikivoyage-tokyo,html-to-markdown (py),Python,converter,True,25,26,0.9714,0.9933,0.4286,192544
+09-wikivoyage-tokyo,trafilatura,Python,extractor,True,24,26,0.9429,0.8851,0.0,118751
+09-wikivoyage-tokyo,markitdown,Python,extractor,True,23,26,0.9143,0.9989,0.6753,190591
+09-wikivoyage-tokyo,pandoc,Haskell,converter,True,21,26,0.8286,0.8741,0.1818,133804
+09-wikivoyage-tokyo,pandoc (default gfm),Haskell,converter,False,18,26,0.6857,0.9965,0.1818,628644
+09-wikivoyage-tokyo,html-to-markdown (go),Go,converter,True,26,26,1.0,0.9988,0.6753,208053
+09-wikivoyage-tokyo,htmd,Rust,converter,True,24,26,0.8857,0.998,0.6753,347590
+10-github-readme-markitdown,turndown,JavaScript,converter,True,26,26,1.0,0.9788,0.5043,126240
+10-github-readme-markitdown,turndown (no gfm plugin),JavaScript,converter,False,19,26,0.6667,0.9788,0.5043,125359
+10-github-readme-markitdown,node-html-markdown,JavaScript,converter,True,21,26,0.7576,0.9761,0.5043,31222
+10-github-readme-markitdown,markdownify,Python,converter,True,26,26,1.0,0.9761,0.5043,28757
+10-github-readme-markitdown,html2text,Python,converter,True,23,26,0.8788,0.9761,0.5043,30603
+10-github-readme-markitdown,html-to-markdown (py),Python,converter,True,24,26,0.9394,0.9747,0.0696,98874
+10-github-readme-markitdown,trafilatura,Python,extractor,True,18,26,0.7576,0.9521,0.0,17020
+10-github-readme-markitdown,markitdown,Python,extractor,True,24,26,0.9394,0.9761,0.5043,28563
+10-github-readme-markitdown,pandoc,Haskell,converter,True,20,26,0.7273,0.9747,0.113,87996
+10-github-readme-markitdown,pandoc (default gfm),Haskell,converter,False,19,26,0.697,0.9738,0.113,174879
+10-github-readme-markitdown,html-to-markdown (go),Go,converter,True,26,26,1.0,0.9761,0.5043,34992
+10-github-readme-markitdown,htmd,Rust,converter,True,21,26,0.7576,0.9788,0.5043,127872

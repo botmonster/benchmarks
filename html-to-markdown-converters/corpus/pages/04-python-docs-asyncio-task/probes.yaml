@@ -1,0 +1,140 @@
+page: 04-python-docs-asyncio-task
+source: https://docs.python.org/3/library/asyncio-task.html
+probes:
+  - id: h1-coroutines-and-tasks
+    feature: headings
+    type: heading
+    args: {level: 1, text: Coroutines and tasks}
+  - id: h2-awaitables
+    feature: headings
+    type: heading
+    args: {level: 2, text: Awaitables}
+  - id: h2-task-groups
+    feature: headings
+    type: heading
+    args: {level: 2, text: Task groups}
+  - id: h2-running-tasks-concurrently
+    feature: headings
+    type: heading
+    args: {level: 2, text: Running tasks concurrently}
+  - id: h3-terminating-a-task-group
+    feature: headings
+    type: heading
+    args: {level: 3, text: Terminating a task group}
+
+  - id: code-doctest-block
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: ">>> async def main(): ... print('hello')"}
+    note: a doctest session, where the ... continuation lines are part of the code
+  - id: code-say-after-example
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "async def say_after(delay, what): await asyncio.sleep(delay)"}
+  - id: code-fstring-with-quotes
+    feature: code
+    type: code_block
+    args: {body: "print(f\"started at {time.strftime('%X')}\")"}
+    note: nested quote styles inside an f-string
+  - id: code-output-block
+    feature: code
+    type: code_block
+    args: {body: "started at 17:13:52 hello world finished at 17:13:55"}
+  - id: code-taskgroup-example
+    feature: code
+    type: code_block
+    args: {body: "async with asyncio.TaskGroup() as tg:"}
+
+  - id: table-wait-constants
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 3
+      cells: ["Constant", "Description", "asyncio.FIRST_COMPLETED"]
+
+  - id: definition-create-task-signature
+    feature: lists
+    type: prose
+    weight: 2
+    args: {text: "asyncio.create_task(coro, *, name=None, context=None, eager_start=None, **kwargs)"}
+    note: the API reference is one long definition list, the hardest shape to carry into Markdown
+  - id: definition-create-task-body
+    feature: lists
+    type: prose
+    args: {text: "Wrap the coro coroutine into a Task and schedule its execution"}
+  - id: definition-sleep-signature
+    feature: lists
+    type: prose
+    args: {text: "asyncio.sleep(delay, result=None)"}
+  - id: definition-gather-signature
+    feature: lists
+    type: prose
+    args: {text: "asyncio.gather(*aws, return_exceptions=False)"}
+    note: the signature contains a bare asterisk that Markdown can read as emphasis
+
+  - id: escape-star-args-not-emphasis
+    feature: escaping
+    type: not_regex
+    weight: 2
+    args: {pattern: "gather\\(\\*aws, return_exceptions=False\\)[\\s\\S]{0,400}\\*[a-z]"}
+    note: the *aws in the signature must not open an emphasis run that swallows later text
+  - id: escape-underscore-in-names
+    feature: escaping
+    type: contains
+    args: {text: "return_exceptions"}
+
+  - id: admonition-important-text
+    feature: structure
+    type: contains
+    args: {text: "In this documentation the term"}
+  - id: admonition-note-text
+    feature: structure
+    type: contains
+    args: {text: "is a new alternative leveraging structural concurrency"}
+  - id: order-coroutines-before-timeouts
+    feature: structure
+    type: order
+    args: {first: "Running tasks concurrently", second: "Waiting primitives"}
+  - id: no-raw-dl-html
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "<dt class="}
+
+  - id: inline-code-asyncio-run
+    feature: inline
+    type: regex
+    args: {pattern: "`asyncio\\.run\\(\\)`"}
+  - id: inline-code-await
+    feature: inline
+    type: regex
+    args: {pattern: "`await`"}
+
+  - id: link-coroutine-glossary
+    feature: links
+    type: link
+    args: {href: "glossary.html#term-coroutine"}
+  - id: link-in-page-anchor
+    feature: links
+    type: link
+    args: {href: "#asyncio.Task"}
+    note: Sphinx cross-references inside the same page
+
+  - id: list-awaitable-kinds
+    feature: lists
+    type: prose
+    args: {text: "There are three main types of awaitable objects"}
+
+  - id: boilerplate-nav-previous
+    feature: boilerplate
+    type: contains
+    args: {text: "Table of Contents"}
+    invert_for: extractor
+  - id: boilerplate-footer-copyright
+    feature: boilerplate
+    type: contains
+    args: {text: "Python Software Foundation"}
+    invert_for: extractor

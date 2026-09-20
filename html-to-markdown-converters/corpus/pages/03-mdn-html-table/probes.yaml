@@ -1,0 +1,143 @@
+page: 03-mdn-html-table
+source: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table
+probes:
+  - id: h1-table-element
+    feature: headings
+    type: heading
+    args: {level: 1, text: "<table> HTML table element"}
+    note: the H1 contains angle brackets that must survive as text
+  - id: h2-accessibility
+    feature: headings
+    type: heading
+    args: {level: 2, text: Accessibility}
+  - id: h2-technical-summary
+    feature: headings
+    type: heading
+    args: {level: 2, text: Technical summary}
+  - id: h3-column-row-spanning
+    feature: headings
+    type: heading
+    args: {level: 3, text: Column and row spanning}
+  - id: h4-result
+    feature: headings
+    type: heading
+    args: {level: 4, text: Result}
+    note: many example sections nest an H4 under an H3
+
+  - id: table-technical-summary
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 6
+      cells: ["Content categories", "Permitted content", "Tag omission", "Implicit ARIA role"]
+  - id: table-cell-flow-content
+    feature: tables
+    type: contains
+    args: {text: "Flow content"}
+
+  - id: code-html-sample-caption
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "<caption> Front-end web developer course 2021 </caption>"}
+    note: a full HTML table shown as sample code, angle brackets and all
+  - id: code-css-sample-border-collapse
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "border-collapse: collapse;"}
+  - id: code-html-sample-scope-col
+    feature: code
+    type: code_block
+    args: {body: "<th scope=\"col\">Member Since</th>"}
+  - id: code-html-sample-time-element
+    feature: code
+    type: code_block
+    args: {body: "<time datetime=\"2010-06-03\">June 3, 2010</time>"}
+  - id: code-fence-language-html
+    feature: code
+    type: fence
+    args: {body: "<th>Maria Sanchez</th>", lang: html}
+    note: nothing passes this one, MDN marks the language with a brush class and no tool reads it
+
+  - id: escape-angle-brackets-not-html
+    feature: escaping
+    type: contains
+    weight: 2
+    args: {text: "<thead>"}
+    note: sample markup must arrive as literal text, not be parsed away
+  - id: escape-h1-brackets-kept
+    feature: escaping
+    type: regex
+    args: {pattern: "<table>`?\\s+HTML table element"}
+
+  - id: definition-list-align
+    feature: lists
+    type: contains
+    weight: 2
+    args: {text: "Specifies the horizontal alignment of the table"}
+    note: the deprecated attributes are a dl, which Markdown has no native form for
+  - id: definition-list-bgcolor
+    feature: lists
+    type: contains
+    args: {text: "Defines the background color of the table"}
+  - id: list-accessibility-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+"}
+
+  - id: details-baseline-body
+    feature: structure
+    type: contains
+    args: {text: "This feature is well established"}
+    note: the Baseline widget hides its text inside a details element
+  - id: notecard-height-attribute
+    feature: structure
+    type: contains
+    args: {text: "some browsers support a non-standard interpretation of"}
+  - id: order-attributes-before-examples
+    feature: structure
+    type: order
+    args: {first: "Deprecated attributes", second: "Column and row spanning"}
+  - id: no-style-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "{align-items:center"}
+    note: MDN inlines component CSS in the page, and it must not become prose
+
+  - id: image-table-layers
+    feature: images
+    type: image
+    weight: 2
+    args: {alt: "Table element layers", src: "table_element_layers.png"}
+
+  - id: link-html-spec
+    feature: links
+    type: link
+    args: {href: "html.spec.whatwg.org"}
+  - id: link-caption-element
+    feature: links
+    type: link
+    args: {href: "/en-US/docs/Web/HTML/Reference/Elements/caption"}
+
+  - id: inline-code-colspan
+    feature: inline
+    type: regex
+    args: {pattern: "`colspan`"}
+  - id: inline-code-scope
+    feature: inline
+    type: regex
+    args: {pattern: "`scope`"}
+
+  - id: boilerplate-mdn-footer
+    feature: boilerplate
+    type: contains
+    args: {text: "Your blueprint for a better internet"}
+    invert_for: extractor
+  - id: boilerplate-left-sidebar
+    feature: boilerplate
+    type: contains
+    args: {text: "Global attributes"}
+    invert_for: extractor

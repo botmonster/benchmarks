@@ -1,0 +1,135 @@
+page: 10-github-readme-markitdown
+source: https://github.com/microsoft/markitdown
+probes:
+  - id: h1-markitdown
+    feature: headings
+    type: heading
+    args: {level: 1, text: MarkItDown}
+  - id: h2-installation
+    feature: headings
+    type: heading
+    args: {level: 2, text: Installation}
+  - id: h3-command-line
+    feature: headings
+    type: heading
+    args: {level: 3, text: Command-Line}
+  - id: h4-in-scope
+    feature: headings
+    type: heading
+    args: {level: 4, text: In scope}
+
+  - id: table-capability-matrix
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 5
+      cells: ["Capability", "Built-in converters", "Azure Document Intelligence", "Azure Content Understanding"]
+  - id: table-contributing-links
+    feature: tables
+    type: table
+    args:
+      min_rows: 3
+      cells: ["Issues", "All Issues", "PRs"]
+    note: a table whose first header cell is empty and whose cells are all links
+
+  - id: code-venv-block
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "python -m venv .venv source .venv/bin/activate"}
+  - id: code-pip-install-extras
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "pip install -e 'packages/markitdown[all]'"}
+    note: square brackets inside a shell command, which reads as a link if unescaped
+  - id: code-python-api-block
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "from markitdown import MarkItDown"}
+  - id: code-shell-redirect
+    feature: code
+    type: code_block
+    args: {body: "markitdown path-to-file.pdf > document.md"}
+    note: a leading redirect character that Markdown reads as a blockquote
+  - id: code-pipe-in-shell
+    feature: code
+    type: code_block
+    args: {body: "cat path-to-file.pdf | markitdown"}
+    note: a pipe character, which breaks a table cell if the block is flattened
+
+  - id: escape-brackets-not-link
+    feature: escaping
+    type: not_regex
+    weight: 2
+    args: {pattern: "markitdown\\[all\\]\\("}
+  - id: escape-redirect-not-quote
+    feature: escaping
+    type: not_regex
+    args: {pattern: "^>\\s*document\\.md"}
+
+  - id: inline-code-markitdown-cli
+    feature: inline
+    type: regex
+    args: {pattern: "`markitdown`"}
+  - id: inline-code-convert-method
+    feature: inline
+    type: regex
+    args: {pattern: "`(md\\.)?convert\\("}
+
+  - id: link-textract
+    feature: links
+    type: link
+    args: {text: textract, href: "https://github.com/deanmalmgren/textract"}
+  - id: link-in-page-anchor
+    feature: links
+    type: link
+    args: {text: Security Considerations, href: "#security-considerations"}
+  - id: image-pypi-badge
+    feature: images
+    type: image
+    args: {alt: PyPI, src: "camo.githubusercontent.com"}
+    note: badge images are camo-proxied and carry an alt
+
+  - id: list-why-markdown-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+.*[Tt]oken"}
+  - id: list-supported-formats
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+Text-based formats \\(CSV, JSON, XML\\)"}
+    note: a flat bullet list whose items contain parentheses and commas
+
+  - id: prose-what-markitdown-is
+    feature: structure
+    type: prose
+    args: {text: "MarkItDown is a lightweight Python utility for converting various files to Markdown"}
+  - id: order-installation-before-usage
+    feature: structure
+    type: order
+    args: {first: "## Installation", second: "## Usage"}
+  - id: no-raw-svg
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "<svg"}
+    note: GitHub's chrome is full of inline SVG that must not land in the Markdown
+  - id: no-script-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "__GITHUB_MODULE_PRELOAD"}
+
+  - id: boilerplate-repo-nav
+    feature: boilerplate
+    type: contains
+    args: {text: "Pull requests"}
+    invert_for: extractor
+  - id: boilerplate-github-footer
+    feature: boilerplate
+    type: contains
+    args: {text: "Footer navigation"}
+    invert_for: extractor

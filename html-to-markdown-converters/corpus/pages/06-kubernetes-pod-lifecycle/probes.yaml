@@ -1,0 +1,148 @@
+page: 06-kubernetes-pod-lifecycle
+source: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
+probes:
+  - id: h1-pod-lifecycle
+    feature: headings
+    type: heading
+    args: {level: 1, text: Pod Lifecycle}
+  - id: h2-pod-phase
+    feature: headings
+    type: heading
+    args: {level: 2, text: Pod phase}
+  - id: h3-container-restarts
+    feature: headings
+    type: heading
+    args: {level: 3, text: Container restarts}
+  - id: h4-pod-level-restart-policy
+    feature: headings
+    type: heading
+    args: {level: 4, text: Pod-level container restart policy}
+    note: a fourth-level heading, which several tools flatten
+
+  - id: table-pod-phase-values
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 5
+      cells: ["Value", "Description", "Pending", "Succeeded"]
+  - id: table-exit-code-matrix
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 3
+      cells: ["Exit Code", "restartPolicy: Always", "Sidecar Containers"]
+    note: a five-column matrix whose headers contain a colon
+  - id: table-pod-conditions-fields
+    feature: tables
+    type: table
+    args:
+      min_rows: 6
+      cells: ["Field name", "lastProbeTime", "lastTransitionTime"]
+
+  - id: code-yaml-web-server
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "restartPolicy: Always # Container restarts regardless of exit code"}
+  - id: code-fence-language-yaml
+    feature: code
+    type: fence
+    weight: 2
+    args: {body: "kind: Pod", lang: yaml}
+    note: the highlighter tags these blocks language-yaml
+  - id: code-yaml-quoted-command
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "command: ['sh', '-c', 'echo \"Running migration...\"; exit 1']"}
+    note: nested single and double quotes inside a YAML list, escaped in the source HTML
+  - id: code-terminal-output-block
+    feature: code
+    type: code_block
+    args: {body: "alessandras-namespace alessandras-pod 0/1 CrashLoopBackOff"}
+    note: a plain pre holding aligned terminal output
+
+  - id: details-summary-text
+    feature: structure
+    type: contains
+    args: {text: "More information about this feature"}
+    note: content hidden inside a details element must still be converted
+  - id: details-body-text
+    feature: structure
+    type: contains
+    args: {text: "To use this feature, you"}
+
+  - id: image-pod-diagram
+    feature: images
+    type: image
+    weight: 2
+    args: {src: "/images/docs/pod.svg"}
+    note: the src attribute here is unquoted in the source HTML
+  - id: image-pod-diagram-alt
+    feature: images
+    type: contains
+    args: {text: "A multi-container Pod that contains a file puller sidecar and a web server"}
+
+  - id: link-sidecar-containers
+    feature: links
+    type: link
+    args: {text: sidecar, href: "/docs/concepts/workloads/pods/sidecar-containers/"}
+  - id: link-with-fragment
+    feature: links
+    type: link
+    args: {href: "/docs/concepts/storage/volumes/#emptydir"}
+    note: the link text carries inline code, so only the target is asserted
+  - id: link-api-reference
+    feature: links
+    type: link
+    args: {href: "/docs/reference/kubernetes-api/workload-resources/pod-v1/"}
+
+  - id: inline-code-restart-policy
+    feature: inline
+    type: regex
+    args: {pattern: "`(spec\\.)?restartPolicy`"}
+  - id: inline-code-crashloopbackoff
+    feature: inline
+    type: regex
+    args: {pattern: "`CrashLoopBackOff`"}
+
+  - id: list-terminated-fields
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+.*[Tt]erminated"}
+  - id: list-container-state-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+.*`?Waiting`?"}
+
+  - id: escape-colon-in-table-header
+    feature: escaping
+    type: contains
+    args: {text: "restartPolicy: OnFailure"}
+
+  - id: order-phase-before-termination
+    feature: structure
+    type: order
+    args: {first: "Pod phase", second: "Termination of Pods"}
+  - id: no-style-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "{display:inline"}
+  - id: no-raw-div-html
+    feature: structure
+    type: absent
+    args: {text: "<div class=\"highlight\""}
+
+  - id: boilerplate-nav-documentation
+    feature: boilerplate
+    type: contains
+    args: {text: "Kubernetes Blog"}
+    invert_for: extractor
+  - id: boilerplate-footer-authors
+    feature: boilerplate
+    type: contains
+    args: {text: "© 2026 The Kubernetes Authors"}
+    invert_for: extractor

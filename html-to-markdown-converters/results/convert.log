@@ -1,0 +1,157 @@
+corpus: 10 pages, tools: 12, reps: 7
+versions: {
+  "turndown": "7.2.4",
+  "turndown (no gfm plugin)": "7.2.4",
+  "node-html-markdown": "2.0.0",
+  "markdownify": "1.2.3",
+  "html2text": "2025.4.15",
+  "html-to-markdown (py)": "3.14.3",
+  "trafilatura": "2.2.0",
+  "markitdown": "0.1.7",
+  "pandoc": "3.11",
+  "pandoc (default gfm)": "3.11",
+  "html-to-markdown (go)": "2.5.2",
+  "htmd": "0.5.1"
+}
+
+01-wikipedia-markdown (310 KB)
+  turndown                       42.7 ms     87480 B
+  turndown (no gfm plugin)       38.2 ms     85448 B
+  node-html-markdown            149.1 ms    104197 B
+  markdownify                   126.4 ms     64083 B
+  html2text                      55.8 ms     64101 B
+  html-to-markdown (py)           5.4 ms     69109 B
+  trafilatura                    97.0 ms     42734 B
+  markitdown                    159.5 ms     53402 B
+  pandoc                        322.3 ms     44548 B
+  pandoc (default gfm)          523.3 ms    206682 B
+  html-to-markdown (go)          16.6 ms     72509 B
+  htmd                            9.5 ms    111420 B
+
+02-wikibooks-latex-mathematics (339 KB)
+  turndown                      109.6 ms    231911 B
+  turndown (no gfm plugin)       71.5 ms     84117 B
+  node-html-markdown            711.0 ms    120214 B
+  markdownify                   314.0 ms     75854 B
+  html2text                     102.3 ms     81473 B
+  html-to-markdown (py)           8.0 ms    228934 B
+  trafilatura                   158.8 ms     58089 B
+  markitdown                    329.5 ms     78601 B
+  pandoc                        420.3 ms     58937 B
+  pandoc (default gfm)          872.6 ms    247605 B
+  html-to-markdown (go)          25.4 ms     99477 B
+  htmd                           16.7 ms    119225 B
+
+03-mdn-html-table (241 KB)
+  turndown                       35.8 ms     75102 B
+  turndown (no gfm plugin)       26.8 ms     74520 B
+  node-html-markdown            151.9 ms     76996 B
+  markdownify                   100.0 ms     73920 B
+  html2text                      55.1 ms     91913 B
+  html-to-markdown (py)           7.5 ms     57852 B
+  trafilatura                    33.2 ms     40761 B
+  markitdown                    138.1 ms     73919 B
+  pandoc                        536.8 ms     51136 B
+  pandoc (default gfm)          571.3 ms     79995 B
+  html-to-markdown (go)          14.9 ms     92896 B
+  htmd                            8.5 ms     78311 B
+
+04-python-docs-asyncio-task (173 KB)
+  turndown                       44.9 ms     63644 B
+  turndown (no gfm plugin)       43.4 ms     63576 B
+  node-html-markdown             44.2 ms     62232 B
+  markdownify                   150.4 ms     65702 B
+  html2text                      54.4 ms     61509 B
+  html-to-markdown (py)          10.2 ms     61226 B
+  trafilatura                   119.4 ms     55872 B
+  markitdown                    190.2 ms     65623 B
+  pandoc                        270.8 ms     60030 B
+  pandoc (default gfm)          723.8 ms    152307 B
+  html-to-markdown (go)          15.0 ms     76109 B
+  htmd                            8.9 ms     63934 B
+
+05-rust-book-vectors (37 KB)
+  turndown                        5.4 ms     14950 B
+  turndown (no gfm plugin)        6.6 ms     14950 B
+  node-html-markdown              3.3 ms     13093 B
+  markdownify                    15.4 ms     12841 B
+  html2text                       6.2 ms     13300 B
+  html-to-markdown (py)           1.3 ms     17127 B
+  trafilatura                     8.7 ms     13019 B
+  markitdown                     37.4 ms     12772 B
+  pandoc                        351.2 ms     12523 B
+  pandoc (default gfm)          381.5 ms     15593 B
+  html-to-markdown (go)           3.5 ms     14223 B
+  htmd                            2.3 ms     14998 B
+
+06-kubernetes-pod-lifecycle (594 KB)
+  turndown                       92.0 ms    162568 B
+  turndown (no gfm plugin)       74.8 ms    159012 B
+  node-html-markdown            667.9 ms    148342 B
+  markdownify                   276.9 ms    145628 B
+  html2text                     106.0 ms    168162 B
+  html-to-markdown (py)          16.1 ms     66090 B
+  trafilatura                   107.4 ms     50691 B
+  markitdown                    360.3 ms    156468 B
+  pandoc                        815.5 ms     62096 B
+  pandoc (default gfm)          824.5 ms     72552 B
+  html-to-markdown (go)          33.7 ms    177308 B
+  htmd                           15.1 ms    159595 B
+
+07-gutenberg-alice (154 KB)
+  turndown                       23.8 ms    154268 B
+  turndown (no gfm plugin)       18.4 ms    153781 B
+  node-html-markdown            212.1 ms    152616 B
+  markdownify                    54.3 ms    152677 B
+  html2text                      25.4 ms    152524 B
+  html-to-markdown (py)           2.8 ms    151527 B
+  trafilatura                    74.4 ms    151432 B
+  markitdown                     89.9 ms    152309 B
+  pandoc                        354.9 ms    153618 B
+  pandoc (default gfm)          340.1 ms    154589 B
+  html-to-markdown (go)          12.5 ms    154067 B
+  htmd                            5.2 ms    154907 B
+
+08-arxiv-phi3 (358 KB)
+  turndown                       58.3 ms    103369 B
+  turndown (no gfm plugin)       52.4 ms     72245 B
+  node-html-markdown             93.5 ms     70441 B
+  markdownify                   189.1 ms     70881 B
+  html2text                      65.2 ms     63682 B
+  html-to-markdown (py)           6.1 ms     92805 B
+  trafilatura                   141.1 ms     59146 B
+  markitdown                    223.6 ms     69399 B
+  pandoc                        396.2 ms     99980 B
+  pandoc (default gfm)          490.3 ms    338973 B
+  html-to-markdown (go)          19.5 ms     76631 B
+  htmd                           11.3 ms     73921 B
+
+09-wikivoyage-tokyo (797 KB)
+  turndown                      105.3 ms    290545 B
+  turndown (no gfm plugin)       98.1 ms    247295 B
+  node-html-markdown            985.3 ms    291822 B
+  markdownify                   316.5 ms    167535 B
+  html2text                     127.0 ms    196233 B
+  html-to-markdown (py)          10.6 ms    192544 B
+  trafilatura                   217.4 ms    118751 B
+  markitdown                    369.2 ms    190591 B
+  pandoc                        729.8 ms    133804 B
+  pandoc (default gfm)         1006.7 ms    628644 B
+  html-to-markdown (go)          35.8 ms    208053 B
+  htmd                           21.4 ms    347590 B
+
+10-github-readme-markitdown (391 KB)
+  turndown                       44.4 ms    126240 B
+  turndown (no gfm plugin)       43.3 ms    125359 B
+  node-html-markdown             35.9 ms     31222 B
+  markdownify                   119.2 ms     28757 B
+  html2text                      35.0 ms     30603 B
+  html-to-markdown (py)          14.2 ms     98874 B
+  trafilatura                    50.7 ms     17020 B
+  markitdown                    141.1 ms     28563 B
+  pandoc                        299.5 ms     87996 B
+  pandoc (default gfm)          384.2 ms    174879 B
+  html-to-markdown (go)          11.8 ms     34992 B
+  htmd                            9.3 ms    127872 B
+
+wrote /bench/results/timings.json

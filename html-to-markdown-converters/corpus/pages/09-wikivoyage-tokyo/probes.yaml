@@ -1,0 +1,131 @@
+page: 09-wikivoyage-tokyo
+source: https://en.wikivoyage.org/wiki/Tokyo
+probes:
+  - id: h2-districts
+    feature: headings
+    type: heading
+    args: {level: 2, text: Districts}
+  - id: h2-get-in
+    feature: headings
+    type: heading
+    args: {level: 2, text: "Get in"}
+  - id: h3-by-plane
+    feature: headings
+    type: heading
+    args: {level: 3, text: "By plane"}
+  - id: h3-climate
+    feature: headings
+    type: heading
+    args: {level: 3, text: Climate}
+
+  - id: table-climate-infobox
+    feature: tables
+    type: contains
+    weight: 2
+    args: {text: "Average max. and min. temperatures in °C"}
+    note: the climate box is a table nested inside a table, which no tool renders as a Markdown table
+  - id: table-climate-source-link
+    feature: tables
+    type: link
+    args: {text: "Japan Meteorological Agency", href: "jma.go.jp"}
+  - id: table-climate-chart-text
+    feature: tables
+    type: contains
+    args: {text: "Climate chart"}
+  - id: table-district-listing
+    feature: tables
+    type: prose
+    args: {text: "The seat of Japanese power"}
+    note: district blurbs live in one-row layout tables, a shape Markdown cannot express
+
+  - id: definition-list-23-wards
+    feature: lists
+    type: prose
+    weight: 2
+    args: {text: "Tokyo can be broadly divided into the"}
+  - id: list-district-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+"}
+  - id: list-airport-name
+    feature: lists
+    type: contains
+    weight: 2
+    args: {text: "Narita International Airport"}
+
+  - id: link-yokohama
+    feature: links
+    type: link
+    args: {text: Yokohama, href: "/wiki/Yokohama"}
+  - id: link-in-page-section
+    feature: links
+    type: link
+    args: {text: "Get around", href: "#Get_around"}
+  - id: link-coordinates-map
+    feature: links
+    type: link
+    args: {href: "/wiki/Special:Map/13/35.66322/139.75078/en"}
+    note: the link text is a degrees-minutes-seconds coordinate string
+
+  - id: image-count-not-collapsed
+    feature: images
+    type: regex
+    weight: 2
+    args: {pattern: "!\\[[^\\]]*\\]\\([^)]+\\)"}
+    note: the page carries 189 images, so at least one must survive as an image
+  - id: image-gpx-download
+    feature: images
+    type: image
+    args: {alt: "Download GPX file for this article"}
+
+  - id: inline-japanese-script
+    feature: entities
+    type: contains
+    weight: 2
+    args: {text: "東京"}
+    note: non-latin characters must not be dropped or escaped into entities
+  - id: inline-degree-symbol
+    feature: entities
+    type: contains
+    args: {text: "35°39′48″N"}
+  - id: entity-no-double-encoding
+    feature: entities
+    type: absent
+    args: {text: "&amp;amp;"}
+
+  - id: inline-bold-lead
+    feature: inline
+    type: regex
+    args: {pattern: "(\\*\\*|__)Tokyo(\\*\\*|__)"}
+
+  - id: prose-understand-section
+    feature: structure
+    type: prose
+    weight: 2
+    args: {text: "the city of Tokyo was once the modest fishing village of Edo"}
+  - id: order-districts-before-get-in
+    feature: structure
+    type: order
+    args: {first: "## Districts", second: "## Get in"}
+  - id: no-style-leakage
+    feature: structure
+    type: absent
+    weight: 3
+    args: {text: "listing-coordinates{display:none"}
+    note: Wikivoyage inlines template CSS inside the content, right where converters will read it
+  - id: no-script-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "RLQ.push"}
+
+  - id: boilerplate-toc-toggle
+    feature: boilerplate
+    type: contains
+    args: {text: "Toggle the table of contents"}
+    invert_for: extractor
+  - id: boilerplate-footer-cc
+    feature: boilerplate
+    type: contains
+    args: {text: "This article is partly based on"}
+    invert_for: extractor

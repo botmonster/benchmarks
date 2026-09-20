@@ -1,0 +1,111 @@
+page: 07-gutenberg-alice
+source: https://www.gutenberg.org/files/11/11-h/11-h.htm
+probes:
+  - id: h1-book-title
+    feature: headings
+    type: heading
+    args: {level: 1, text: "Alice’s Adventures in Wonderland"}
+    note: the title carries a typographic apostrophe
+  - id: h2-by-line
+    feature: headings
+    type: heading
+    args: {level: 2, text: "by Lewis Carroll"}
+  - id: h2-chapter-one
+    feature: headings
+    type: heading
+    args: {level: 2, text: "CHAPTER I."}
+    note: a br splits the chapter number from its title inside the heading
+  - id: h2-chapter-twelve
+    feature: headings
+    type: heading
+    args: {level: 2, text: "CHAPTER XII."}
+
+  - id: linebreak-poem-crocodile
+    feature: inline
+    type: not_regex
+    weight: 3
+    args: {pattern: "crocodile\\s+Improve his shining tail"}
+    note: the poem's line breaks are br tags, and joining two verse lines into one loses the poem
+  - id: linebreak-poem-father-william
+    feature: inline
+    type: not_regex
+    weight: 2
+    args: {pattern: "the young man said,\\s+“And your hair"}
+  - id: poem-text-present
+    feature: inline
+    type: prose
+    args: {text: "How cheerfully he seems to grin"}
+
+  - id: code-mouse-tale-shape
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "“Fury said to a"}
+    note: the mouse's tail is a pre block whose indentation is the joke
+  - id: code-address-block
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "Alice’s Right Foot, Esq., Hearthrug,"}
+
+  - id: table-contents-listing
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 10
+      cells: ["CHAPTER I.", "Down the Rabbit-Hole", "CHAPTER XII."]
+    note: a borderless two-column table used as a table of contents
+
+  - id: link-toc-anchor
+    feature: links
+    type: link
+    args: {text: "CHAPTER III.", href: "#chap03"}
+  - id: image-cover
+    feature: images
+    type: image
+    args: {alt: cover, src: "images/cover.jpg"}
+
+  - id: inline-italic-very
+    feature: inline
+    type: regex
+    args: {pattern: "(\\*|_)very(\\*|_)"}
+  - id: entity-curly-apostrophe
+    feature: entities
+    type: contains
+    weight: 2
+    args: {text: "Alice’s"}
+    note: a typographic apostrophe, not the ASCII one
+  - id: entity-em-dash-kept
+    feature: entities
+    type: prose
+    args: {text: "you.—Come,"}
+    note: an em dash inside a pre block, with italics wrapped around the word before it
+  - id: entity-nbsp-not-literal
+    feature: entities
+    type: absent
+    args: {text: "&nbsp;"}
+
+  - id: prose-opening-sentence
+    feature: structure
+    type: prose
+    weight: 2
+    args: {text: "Alice was beginning to get very tired of sitting by her sister on the bank"}
+  - id: prose-closing-sentence
+    feature: structure
+    type: prose
+    args: {text: "remembering her own child-life, and the happy summer days"}
+  - id: order-chapter-one-before-twelve
+    feature: structure
+    type: order
+    args: {first: "Down the Rabbit-Hole", second: "Alice’s Evidence"}
+  - id: hr-separator-kept
+    feature: structure
+    type: regex
+    args: {pattern: "^\\s*(\\*\\s*){3,}\\s*$|^\\s*-{3,}\\s*$|^\\s*_{3,}\\s*$"}
+    note: the page uses horizontal rules between scene breaks
+  - id: no-raw-br-tags
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "<br/>"}

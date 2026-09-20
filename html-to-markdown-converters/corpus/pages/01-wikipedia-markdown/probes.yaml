@@ -1,0 +1,182 @@
+page: 01-wikipedia-markdown
+source: https://en.wikipedia.org/wiki/Markdown
+probes:
+  - id: h2-history
+    feature: headings
+    type: heading
+    args: {level: 2, text: History}
+  - id: h2-commonmark
+    feature: headings
+    type: heading
+    args: {level: 2, text: CommonMark}
+  - id: h2-implementations
+    feature: headings
+    type: heading
+    args: {level: 2, text: Implementations}
+  - id: h3-github-flavored
+    feature: headings
+    type: heading
+    args: {level: 3, text: GitHub Flavored Markdown}
+    note: a third-level heading must not be flattened to level 2
+
+  - id: table-syntax-examples
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 3
+      cells: ["Text using Markdown syntax", "Text viewed in a browser"]
+    note: the wikitable comparing Markdown source, HTML and rendered output
+  - id: table-infobox-extensions
+    feature: tables
+    type: table
+    args:
+      min_rows: 4
+      cells: ["Filename extensions", "Internet media type"]
+  - id: table-infobox-cell-value
+    feature: tables
+    type: contains
+    args: {text: "net.daringfireball.markdown"}
+
+  - id: code-setext-sample-text
+    feature: code
+    type: contains
+    weight: 2
+    args: {text: "Sub-heading -----------"}
+    note: every pre on this page sits inside a table cell, so the text must survive even where the block cannot
+  - id: code-raw-html-sample-text
+    feature: code
+    type: contains
+    weight: 2
+    args: {text: "<h2>Sub-heading</h2>"}
+    note: literal HTML shown as sample code must come through as text, not be parsed
+  - id: code-text-attributes-sample
+    feature: code
+    type: contains
+    args: {text: "Text attributes *italic*, **bold**"}
+  - id: code-nested-list-sample
+    feature: code
+    type: contains
+    args: {text: "1. fruits"}
+  - id: code-blockquote-sample
+    feature: code
+    type: contains
+    args: {text: "Markdown uses email-style"}
+  - id: code-abbr-sample
+    feature: code
+    type: contains
+    args: {text: "abbr title=\"Hypertext Markup Language\""}
+  - id: code-fenced-or-indented
+    feature: code
+    type: code_block
+    args: {body: "Sub-heading"}
+    note: bonus, only tools that keep a real code block inside a table cell pass
+
+  - id: escape-sample-heading-not-real
+    feature: escaping
+    type: not_regex
+    args: {pattern: "^#{1,6}\\s+Alternative heading"}
+    note: the sample "# Alternative heading" is demo text, not a heading of this article
+  - id: escape-inline-code-monospace
+    feature: escaping
+    type: contains
+    args: {text: "`monospace`"}
+
+  - id: link-price-markdown
+    feature: links
+    type: link
+    args: {text: Price markdown, href: "/wiki/Price_markdown"}
+  - id: link-verifiability
+    feature: links
+    type: link
+    args: {text: references, href: "Wikipedia:Verifiability"}
+  - id: link-external-google-books
+    feature: links
+    type: link
+    args: {text: books, href: "google.com/search"}
+
+  - id: image-markdown-mark
+    feature: images
+    type: image
+    args: {src: "Markdown-mark.svg"}
+  - id: image-icon-pictures-alt
+    feature: images
+    type: image
+    args: {alt: Image, src: "Icon-pictures.png"}
+
+  - id: inline-code-md-extension
+    feature: inline
+    type: regex
+    args: {pattern: "`\\.md`"}
+    note: the .md extension is marked up as inline code in the infobox
+  - id: inline-italic-title
+    feature: inline
+    type: regex
+    args: {pattern: "(\\*|_)Markdown for Writers(\\*|_)"}
+  - id: inline-bold-lead
+    feature: inline
+    type: regex
+    args: {pattern: "(\\*\\*|__)Markdown(\\*\\*|__)"}
+    note: the lead sentence bolds the article subject
+
+  - id: footnote-anchor-survives
+    feature: footnotes
+    type: contains
+    args: {text: "cite_note-df-2022-1"}
+  - id: footnote-marker-visible
+    feature: footnotes
+    type: regex
+    args: {pattern: "\\\\?\\[\\\\?\\[1\\\\?\\]\\\\?\\]"}
+    note: the visible [1] citation marker, however the tool chooses to escape it
+  - id: footnote-references-heading
+    feature: footnotes
+    type: heading
+    args: {level: 2, text: References}
+
+  - id: list-nested-see-also
+    feature: lists
+    type: contains
+    args: {text: "Lightweight markup language"}
+  - id: list-variants-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+.*Markdown Extra"}
+
+  - id: entity-ampersand-decoded
+    feature: entities
+    type: absent
+    args: {text: "&amp;amp;"}
+    note: entities must be decoded once, not left double-encoded
+
+  - id: order-history-before-implementations
+    feature: structure
+    type: order
+    args: {first: "## History", second: "## Implementations"}
+  - id: no-raw-table-html
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "<td id="}
+    note: dumping the source table back out as raw HTML is not a conversion
+  - id: no-script-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "RLQ.push"}
+    note: inline script bodies must never reach the Markdown
+  - id: no-style-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "mw-parser-output .navbar{display:inline"}
+
+  - id: boilerplate-toc-toggle
+    feature: boilerplate
+    type: contains
+    args: {text: "Toggle the table of contents"}
+    invert_for: extractor
+  - id: boilerplate-footer-edited
+    feature: boilerplate
+    type: contains
+    args: {text: "This page was last edited on"}
+    invert_for: extractor

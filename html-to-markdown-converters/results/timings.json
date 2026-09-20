@@ -1,0 +1,874 @@
+{
+  "reps": 7,
+  "spawn_overhead_ms": 0.433,
+  "tools": {
+    "turndown": {
+      "lang": "JavaScript",
+      "kind": "converter",
+      "repo": "https://github.com/mixmark-io/turndown",
+      "version": "7.2.4",
+      "ranked": true,
+      "notes": "turndown-plugin-gfm enabled, which is what its own docs point you at for tables"
+    },
+    "turndown (no gfm plugin)": {
+      "lang": "JavaScript",
+      "kind": "converter",
+      "repo": "https://github.com/mixmark-io/turndown",
+      "version": "7.2.4",
+      "ranked": false,
+      "notes": "stock turndown with no plugins, scored to show what the plugin buys you"
+    },
+    "node-html-markdown": {
+      "lang": "JavaScript",
+      "kind": "converter",
+      "repo": "https://github.com/crosstype/node-html-markdown",
+      "version": "2.0.0",
+      "ranked": true,
+      "notes": ""
+    },
+    "markdownify": {
+      "lang": "Python",
+      "kind": "converter",
+      "repo": "https://github.com/matthewwithanm/python-markdownify",
+      "version": "1.2.3",
+      "ranked": true,
+      "notes": ""
+    },
+    "html2text": {
+      "lang": "Python",
+      "kind": "converter",
+      "repo": "https://github.com/Alir3z4/html2text",
+      "version": "2025.4.15",
+      "ranked": true,
+      "notes": ""
+    },
+    "html-to-markdown (py)": {
+      "lang": "Python",
+      "kind": "converter",
+      "repo": "https://github.com/xberg-io/html-to-markdown",
+      "version": "3.14.3",
+      "ranked": true,
+      "notes": ""
+    },
+    "trafilatura": {
+      "lang": "Python",
+      "kind": "extractor",
+      "repo": "https://github.com/adbar/trafilatura",
+      "version": "2.2.0",
+      "ranked": true,
+      "notes": ""
+    },
+    "markitdown": {
+      "lang": "Python",
+      "kind": "extractor",
+      "repo": "https://github.com/microsoft/markitdown",
+      "version": "0.1.7",
+      "ranked": true,
+      "notes": ""
+    },
+    "pandoc": {
+      "lang": "Haskell",
+      "kind": "converter",
+      "repo": "https://github.com/jgm/pandoc",
+      "version": "3.11",
+      "ranked": true,
+      "notes": "run as --to=gfm-raw_html so it converts instead of passing HTML through"
+    },
+    "pandoc (default gfm)": {
+      "lang": "Haskell",
+      "kind": "converter",
+      "repo": "https://github.com/jgm/pandoc",
+      "version": "3.11",
+      "ranked": false,
+      "notes": "plain --to=gfm, which passes tables, figures and pre blocks through as raw HTML"
+    },
+    "html-to-markdown (go)": {
+      "lang": "Go",
+      "kind": "converter",
+      "repo": "https://github.com/JohannesKaufmann/html-to-markdown",
+      "version": "2.5.2",
+      "ranked": true,
+      "notes": ""
+    },
+    "htmd": {
+      "lang": "Rust",
+      "kind": "converter",
+      "repo": "https://github.com/letmutex/htmd",
+      "version": "0.5.1",
+      "ranked": true,
+      "notes": ""
+    }
+  },
+  "pages": {
+    "01-wikipedia-markdown": {
+      "bytes": 318128,
+      "tools": {
+        "turndown": {
+          "median_ms": 42.654,
+          "min_ms": 41.656,
+          "output_bytes": 87480,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 38.182,
+          "min_ms": 37.483,
+          "output_bytes": 85448,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 149.055,
+          "min_ms": 146.546,
+          "output_bytes": 104197,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 126.447,
+          "min_ms": 122.406,
+          "output_bytes": 64083,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 55.755,
+          "min_ms": 55.145,
+          "output_bytes": 64101,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 5.37,
+          "min_ms": 5.052,
+          "output_bytes": 69109,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 96.97,
+          "min_ms": 95.163,
+          "output_bytes": 42734,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 159.456,
+          "min_ms": 150.371,
+          "output_bytes": 53402,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 322.271,
+          "min_ms": 279.661,
+          "output_bytes": 44548,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 523.31,
+          "min_ms": 510.995,
+          "output_bytes": 206682,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 16.597,
+          "min_ms": 15.937,
+          "output_bytes": 72509,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 9.547,
+          "min_ms": 8.95,
+          "output_bytes": 111420,
+          "error": null
+        }
+      }
+    },
+    "02-wikibooks-latex-mathematics": {
+      "bytes": 348838,
+      "tools": {
+        "turndown": {
+          "median_ms": 109.621,
+          "min_ms": 105.311,
+          "output_bytes": 231911,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 71.535,
+          "min_ms": 70.417,
+          "output_bytes": 84117,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 710.985,
+          "min_ms": 696.361,
+          "output_bytes": 120214,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 313.981,
+          "min_ms": 283.572,
+          "output_bytes": 75854,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 102.256,
+          "min_ms": 100.012,
+          "output_bytes": 81473,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 7.994,
+          "min_ms": 7.883,
+          "output_bytes": 228934,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 158.827,
+          "min_ms": 158.39,
+          "output_bytes": 58089,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 329.51,
+          "min_ms": 323.672,
+          "output_bytes": 78601,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 420.27,
+          "min_ms": 417.825,
+          "output_bytes": 58937,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 872.582,
+          "min_ms": 867.306,
+          "output_bytes": 247605,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 25.417,
+          "min_ms": 24.364,
+          "output_bytes": 99477,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 16.655,
+          "min_ms": 14.821,
+          "output_bytes": 119225,
+          "error": null
+        }
+      }
+    },
+    "03-mdn-html-table": {
+      "bytes": 247446,
+      "tools": {
+        "turndown": {
+          "median_ms": 35.839,
+          "min_ms": 27.748,
+          "output_bytes": 75102,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 26.838,
+          "min_ms": 25.991,
+          "output_bytes": 74520,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 151.918,
+          "min_ms": 149.868,
+          "output_bytes": 76996,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 99.955,
+          "min_ms": 98.612,
+          "output_bytes": 73920,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 55.06,
+          "min_ms": 53.742,
+          "output_bytes": 91913,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 7.478,
+          "min_ms": 7.42,
+          "output_bytes": 57852,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 33.243,
+          "min_ms": 32.868,
+          "output_bytes": 40761,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 138.055,
+          "min_ms": 133.645,
+          "output_bytes": 73919,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 536.768,
+          "min_ms": 514.269,
+          "output_bytes": 51136,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 571.315,
+          "min_ms": 566.931,
+          "output_bytes": 79995,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 14.933,
+          "min_ms": 13.918,
+          "output_bytes": 92896,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 8.517,
+          "min_ms": 7.979,
+          "output_bytes": 78311,
+          "error": null
+        }
+      }
+    },
+    "04-python-docs-asyncio-task": {
+      "bytes": 177639,
+      "tools": {
+        "turndown": {
+          "median_ms": 44.876,
+          "min_ms": 43.536,
+          "output_bytes": 63644,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 43.398,
+          "min_ms": 41.21,
+          "output_bytes": 63576,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 44.215,
+          "min_ms": 42.115,
+          "output_bytes": 62232,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 150.423,
+          "min_ms": 145.522,
+          "output_bytes": 65702,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 54.443,
+          "min_ms": 52.847,
+          "output_bytes": 61509,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 10.15,
+          "min_ms": 10.096,
+          "output_bytes": 61226,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 119.359,
+          "min_ms": 116.258,
+          "output_bytes": 55872,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 190.178,
+          "min_ms": 183.44,
+          "output_bytes": 65623,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 270.77,
+          "min_ms": 265.03,
+          "output_bytes": 60030,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 723.796,
+          "min_ms": 712.145,
+          "output_bytes": 152307,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 15.004,
+          "min_ms": 14.632,
+          "output_bytes": 76109,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 8.939,
+          "min_ms": 8.576,
+          "output_bytes": 63934,
+          "error": null
+        }
+      }
+    },
+    "05-rust-book-vectors": {
+      "bytes": 38648,
+      "tools": {
+        "turndown": {
+          "median_ms": 5.407,
+          "min_ms": 5.006,
+          "output_bytes": 14950,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 6.647,
+          "min_ms": 5.858,
+          "output_bytes": 14950,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 3.348,
+          "min_ms": 2.67,
+          "output_bytes": 13093,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 15.387,
+          "min_ms": 13.494,
+          "output_bytes": 12841,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 6.188,
+          "min_ms": 5.732,
+          "output_bytes": 13300,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 1.28,
+          "min_ms": 1.266,
+          "output_bytes": 17127,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 8.694,
+          "min_ms": 8.629,
+          "output_bytes": 13019,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 37.41,
+          "min_ms": 29.896,
+          "output_bytes": 12772,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 351.2,
+          "min_ms": 345.409,
+          "output_bytes": 12523,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 381.486,
+          "min_ms": 376.965,
+          "output_bytes": 15593,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 3.517,
+          "min_ms": 3.359,
+          "output_bytes": 14223,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 2.26,
+          "min_ms": 2.173,
+          "output_bytes": 14998,
+          "error": null
+        }
+      }
+    },
+    "06-kubernetes-pod-lifecycle": {
+      "bytes": 608899,
+      "tools": {
+        "turndown": {
+          "median_ms": 91.957,
+          "min_ms": 72.19,
+          "output_bytes": 162568,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 74.768,
+          "min_ms": 71.732,
+          "output_bytes": 159012,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 667.908,
+          "min_ms": 658.063,
+          "output_bytes": 148342,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 276.913,
+          "min_ms": 273.493,
+          "output_bytes": 145628,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 105.95,
+          "min_ms": 104.703,
+          "output_bytes": 168162,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 16.117,
+          "min_ms": 15.971,
+          "output_bytes": 66090,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 107.401,
+          "min_ms": 105.201,
+          "output_bytes": 50691,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 360.34,
+          "min_ms": 335.72,
+          "output_bytes": 156468,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 815.536,
+          "min_ms": 769.605,
+          "output_bytes": 62096,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 824.465,
+          "min_ms": 788.054,
+          "output_bytes": 72552,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 33.694,
+          "min_ms": 32.033,
+          "output_bytes": 177308,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 15.111,
+          "min_ms": 14.382,
+          "output_bytes": 159595,
+          "error": null
+        }
+      }
+    },
+    "07-gutenberg-alice": {
+      "bytes": 164778,
+      "tools": {
+        "turndown": {
+          "median_ms": 23.752,
+          "min_ms": 17.759,
+          "output_bytes": 154268,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 18.427,
+          "min_ms": 17.551,
+          "output_bytes": 153781,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 212.122,
+          "min_ms": 209.355,
+          "output_bytes": 152616,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 54.34,
+          "min_ms": 53.853,
+          "output_bytes": 152677,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 25.413,
+          "min_ms": 25.346,
+          "output_bytes": 152524,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 2.817,
+          "min_ms": 2.788,
+          "output_bytes": 151527,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 74.408,
+          "min_ms": 73.788,
+          "output_bytes": 151432,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 89.893,
+          "min_ms": 83.511,
+          "output_bytes": 152309,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 354.875,
+          "min_ms": 348.639,
+          "output_bytes": 153618,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 340.134,
+          "min_ms": 330.213,
+          "output_bytes": 154589,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 12.547,
+          "min_ms": 11.933,
+          "output_bytes": 154067,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 5.222,
+          "min_ms": 4.803,
+          "output_bytes": 154907,
+          "error": null
+        }
+      }
+    },
+    "08-arxiv-phi3": {
+      "bytes": 367119,
+      "tools": {
+        "turndown": {
+          "median_ms": 58.311,
+          "min_ms": 53.625,
+          "output_bytes": 103369,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 52.448,
+          "min_ms": 50.448,
+          "output_bytes": 72245,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 93.475,
+          "min_ms": 89.071,
+          "output_bytes": 70441,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 189.061,
+          "min_ms": 186.307,
+          "output_bytes": 70881,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 65.249,
+          "min_ms": 64.971,
+          "output_bytes": 63682,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 6.091,
+          "min_ms": 6.018,
+          "output_bytes": 92805,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 141.13,
+          "min_ms": 140.106,
+          "output_bytes": 59146,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 223.645,
+          "min_ms": 219.2,
+          "output_bytes": 69399,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 396.169,
+          "min_ms": 386.58,
+          "output_bytes": 99980,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 490.342,
+          "min_ms": 473.882,
+          "output_bytes": 338973,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 19.482,
+          "min_ms": 19.104,
+          "output_bytes": 76631,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 11.323,
+          "min_ms": 10.716,
+          "output_bytes": 73921,
+          "error": null
+        }
+      }
+    },
+    "09-wikivoyage-tokyo": {
+      "bytes": 819270,
+      "tools": {
+        "turndown": {
+          "median_ms": 105.253,
+          "min_ms": 100.671,
+          "output_bytes": 290545,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 98.148,
+          "min_ms": 95.541,
+          "output_bytes": 247295,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 985.306,
+          "min_ms": 979.025,
+          "output_bytes": 291822,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 316.491,
+          "min_ms": 283.555,
+          "output_bytes": 167535,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 127.02,
+          "min_ms": 126.149,
+          "output_bytes": 196233,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 10.589,
+          "min_ms": 10.472,
+          "output_bytes": 192544,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 217.434,
+          "min_ms": 215.082,
+          "output_bytes": 118751,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 369.183,
+          "min_ms": 345.423,
+          "output_bytes": 190591,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 729.837,
+          "min_ms": 702.95,
+          "output_bytes": 133804,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 1006.689,
+          "min_ms": 998.682,
+          "output_bytes": 628644,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 35.821,
+          "min_ms": 34.602,
+          "output_bytes": 208053,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 21.355,
+          "min_ms": 20.138,
+          "output_bytes": 347590,
+          "error": null
+        }
+      }
+    },
+    "10-github-readme-markitdown": {
+      "bytes": 400863,
+      "tools": {
+        "turndown": {
+          "median_ms": 44.424,
+          "min_ms": 38.449,
+          "output_bytes": 126240,
+          "error": null
+        },
+        "turndown (no gfm plugin)": {
+          "median_ms": 43.295,
+          "min_ms": 37.595,
+          "output_bytes": 125359,
+          "error": null
+        },
+        "node-html-markdown": {
+          "median_ms": 35.921,
+          "min_ms": 29.866,
+          "output_bytes": 31222,
+          "error": null
+        },
+        "markdownify": {
+          "median_ms": 119.215,
+          "min_ms": 118.001,
+          "output_bytes": 28757,
+          "error": null
+        },
+        "html2text": {
+          "median_ms": 35.014,
+          "min_ms": 34.741,
+          "output_bytes": 30603,
+          "error": null
+        },
+        "html-to-markdown (py)": {
+          "median_ms": 14.213,
+          "min_ms": 14.109,
+          "output_bytes": 98874,
+          "error": null
+        },
+        "trafilatura": {
+          "median_ms": 50.703,
+          "min_ms": 49.995,
+          "output_bytes": 17020,
+          "error": null
+        },
+        "markitdown": {
+          "median_ms": 141.074,
+          "min_ms": 134.943,
+          "output_bytes": 28563,
+          "error": null
+        },
+        "pandoc": {
+          "median_ms": 299.543,
+          "min_ms": 291.958,
+          "output_bytes": 87996,
+          "error": null
+        },
+        "pandoc (default gfm)": {
+          "median_ms": 384.229,
+          "min_ms": 363.486,
+          "output_bytes": 174879,
+          "error": null
+        },
+        "html-to-markdown (go)": {
+          "median_ms": 11.802,
+          "min_ms": 11.138,
+          "output_bytes": 34992,
+          "error": null
+        },
+        "htmd": {
+          "median_ms": 9.322,
+          "min_ms": 9.193,
+          "output_bytes": 127872,
+          "error": null
+        }
+      }
+    }
+  }
+}

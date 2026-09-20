@@ -1,0 +1,9 @@
+{
+  "slug": "05-rust-book-vectors",
+  "source_url": "https://doc.rust-lang.org/book/ch08-01-vectors.html",
+  "license": "MIT OR Apache-2.0",
+  "license_url": "https://github.com/rust-lang/book/blob/main/LICENSE-MIT",
+  "attribution": "Steve Klabnik and Carol Nichols, \"Storing Lists of Values with Vectors\", The Rust Programming Language",
+  "fetched_at": "2026-09-20T13:17:12Z",
+  "bytes": 38648
+}

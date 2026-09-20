@@ -1,0 +1,10 @@
+01-wikipedia-markdown	#mw-content-text	header.vector-header|footer#footer|nav.vector-main-menu-landmark|.vector-page-titlebar
+02-wikibooks-latex-mathematics	#mw-content-text	header.vector-header|footer#footer|nav.vector-main-menu-landmark|.vector-page-titlebar
+03-mdn-html-table	main#content	header.page-layout__header|footer.footer|nav.reference-toc|aside#main-sidebar
+04-python-docs-asyncio-task	div[role=main]	div.related|div.footer|nav.menu
+05-rust-book-vectors	main	div.menu-bar|nav#mdbook-sidebar|nav.nav-wide-wrapper
+06-kubernetes-pod-lifecycle	div.td-content	nav.navbar|nav#td-section-nav|nav#TableOfContents|footer
+07-gutenberg-alice	body	
+08-arxiv-phi3	article.ltx_document	header.arxiv-html-header|footer.ds-site-footer|nav.ltx_page_navbar|footer.arxiv-html-footer
+09-wikivoyage-tokyo	#mw-content-text	header.vector-header|footer#footer|nav.vector-main-menu-landmark|.vector-page-titlebar
+10-github-readme-markitdown	article.markdown-body	header.MarketingHeader-module__root__Tk7n3|footer.footer|nav.js-repo-nav

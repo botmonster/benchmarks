@@ -1,0 +1,138 @@
+page: 02-wikibooks-latex-mathematics
+source: https://en.wikibooks.org/wiki/LaTeX/Mathematics
+probes:
+  - id: h2-symbols
+    feature: headings
+    type: heading
+    args: {level: 2, text: Symbols}
+  - id: h2-greek-letters
+    feature: headings
+    type: heading
+    args: {level: 2, text: Greek letters}
+  - id: h2-fractions-binomials
+    feature: headings
+    type: heading
+    args: {level: 2, text: Fractions and Binomials}
+  - id: h3-continued-fractions
+    feature: headings
+    type: heading
+    args: {level: 3, text: Continued fractions}
+
+  - id: table-math-environments
+    feature: tables
+    type: table
+    weight: 2
+    args:
+      min_rows: 4
+      cells: ["Type", "Environment", "LaTeX shorthand", "displaymath"]
+  - id: table-shorthand-backslash-cells
+    feature: tables
+    type: contains
+    args: {text: "\\(...\\)"}
+    note: table cells whose content is nothing but backslashes and brackets
+
+  - id: math-mathml-inline-result
+    feature: math
+    type: prose
+    weight: 2
+    args: {text: "a+a=2a"}
+    note: the rendered MathML for an inline formula
+  - id: math-quantifiers-rendered
+    feature: math
+    type: contains
+    weight: 2
+    args: {text: "∀x∈X,∃y≤ϵ"}
+    note: MathML output using real unicode operators
+  - id: math-greek-rendered
+    feature: math
+    type: contains
+    args: {text: "α,A,β,B,γ,Γ"}
+  - id: math-no-mathml-tags
+    feature: math
+    type: absent
+    weight: 2
+    args: {text: "<annotation"}
+    note: MathML internals must not be dumped into the output
+
+  - id: code-latex-quantifier-source
+    feature: code
+    type: code_block
+    weight: 2
+    args: {body: "\\forall x \\in X, \\quad \\exists y \\leq \\epsilon"}
+    note: a LaTeX source sample, all backslashes, sitting next to its rendered form
+  - id: code-latex-greek-source
+    feature: code
+    type: contains
+    args: {text: "\\alpha, \\Alpha, \\beta, \\Beta, \\gamma, \\Gamma"}
+  - id: code-latex-trig-source
+    feature: code
+    type: contains
+    args: {text: "\\cos (2\\theta) = \\cos^2 \\theta - \\sin^2 \\theta"}
+  - id: code-usepackage-amsmath
+    feature: code
+    type: code_block
+    args: {body: "\\usepackage{amsmath}"}
+  - id: code-reserved-characters
+    feature: code
+    type: code_block
+    args: {body: "+ - = ! / ( ) [ ] < > | ' : *"}
+    note: the reserved-character list is every Markdown metacharacter at once
+
+  - id: escape-backslash-preserved
+    feature: escaping
+    type: contains
+    weight: 2
+    args: {text: "\\usepackage{mathtools}"}
+  - id: escape-underscore-subscript
+    feature: escaping
+    type: contains
+    args: {text: "k_n"}
+
+  - id: inline-italic-text-mode
+    feature: inline
+    type: regex
+    args: {pattern: "(\\*|_)math mode(\\*|_)"}
+
+  - id: entity-nbsp-collapsed
+    feature: entities
+    type: absent
+    args: {text: "&nbsp;"}
+
+  - id: list-environment-bullets
+    feature: lists
+    type: regex
+    args: {pattern: "^\\s*([-*+])\\s+"}
+  - id: link-amsmath-package
+    feature: links
+    type: link
+    args: {href: "/wiki/LaTeX/Advanced_Mathematics"}
+  - id: link-external-ctan
+    feature: links
+    type: regex
+    args: {pattern: "\\]\\(https?://[^)]*ctan[^)]*\\)"}
+
+  - id: order-symbols-before-roots
+    feature: structure
+    type: order
+    args: {first: "Greek letters", second: "Roots"}
+  - id: no-style-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "mwe-math-fallback-image"}
+  - id: no-script-leakage
+    feature: structure
+    type: absent
+    weight: 2
+    args: {text: "RLQ.push"}
+
+  - id: boilerplate-toc-toggle
+    feature: boilerplate
+    type: contains
+    args: {text: "Toggle the table of contents"}
+    invert_for: extractor
+  - id: boilerplate-footer-edited
+    feature: boilerplate
+    type: contains
+    args: {text: "This page was last edited on"}
+    invert_for: extractor
