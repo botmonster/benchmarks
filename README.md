@@ -16,6 +16,7 @@ Every time a post publishes measured numbers, the exact scripts that produced th
 | [cache-key-leak](cache-key-leak/) | [An Aladdin Connect cache bug leaked strangers' garage doors](https://botmonster.com/smart-home/an-aladdin-connect-cache-bug-leaked-strangers-garage-doors/) | A stock nginx cache with the default key serving one user's API response to everyone, a 40-client polling simulation of the rotating-stranger pattern, and two fixes |
 | [duckdb-csv-parquet-analytics](duckdb-csv-parquet-analytics/) | [DuckDB is absurdly good at crunching gigabytes with no database server](https://botmonster.com/coding/duckdb-developers-analyze-csv-parquet-no-server/) | DuckDB vs Pandas vs Polars (filter/group-by/join), CSV vs Parquet scan, out-of-core sort under a memory limit, direct Parquet query with no import |
 | [html-to-markdown-converters](html-to-markdown-converters/) | [Best 10 HTML to Markdown converters in 2026](https://botmonster.com/coding/best-10-html-to-markdown-converters-in-2026/) | feature-probe fidelity across 10 open-license pages, text retention, boilerplate leakage, conversion speed |
+| [object-storage-for-saas](object-storage-for-saas/) | [The best object storage for SaaS in 2026](https://botmonster.com/web-dev/the-best-object-storage-for-saas-in-2026/) | monthly cost of three SaaS workloads on eight providers |
 
 ## Replicating
 
